@@ -11,6 +11,7 @@ ms.custom: include file
 ---
 
 The following list contains Ultra Disk's limitations:
+- Ultra Disks deployed using Virtual Machine Scale Sets currently use the lower IOPS formula (300 IOPS/GiB) to calculate their performance.
 - Ultra Disks can't be used as an OS disk or with Azure Compute Gallery.
 - Currently, Ultra Disks only support Single VM and Availability zone infrastructure options as locally redundant storage (LRS). Ultra Disks don't support zone redundant storage (ZRS).
 - Ultra Disks don't support availability sets.
@@ -19,7 +20,6 @@ The following list contains Ultra Disk's limitations:
 - Azure Site Recovery for VMs with Ultra Disks is currently in [Public Preview](/azure/site-recovery/azure-to-azure-support-matrix).
 - Ultra Disks don't support disk caching.
 - Snapshots are supported with [other limitations](/azure/virtual-machines/disks-incremental-snapshots?tabs=azure-powershell#incremental-snapshots-of-premium-ssd-v2-and-ultra-disks).
-- Azure Backup support for VMs with Ultra Disks is [generally available](/azure/backup/backup-support-matrix-iaas#vm-storage-support). Azure Backup has limitations when using Ultra Disks, see [VM storage support](/azure/backup/backup-support-matrix-iaas#vm-storage-support) for details.
 
 Ultra Disks support a 4k physical sector size by default but also supports a 512E sector size. Most applications are compatible with 4k sector sizes, but some require 512-byte sector sizes. Oracle Database, for example, requires release 12.2 or later in order to support 4k native disks. For older versions of Oracle DB, 512-byte sector size is required.
 

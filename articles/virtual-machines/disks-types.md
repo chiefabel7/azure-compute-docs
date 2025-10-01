@@ -3,7 +3,7 @@ title: Select a disk type for Azure IaaS VMs - managed disks
 description: Learn about the available Azure disk types for virtual machines, including Ultra Disks, Premium SSDs v2, Premium SSDs, standard SSDs, and Standard HDDs.
 author: roygara
 ms.author: rogarana
-ms.date: 08/14/2025
+ms.date: 10/01/2025
 ms.topic: concept-article
 ms.service: azure-disk-storage
 ms.custom: references_regions
@@ -45,13 +45,13 @@ For more help deciding which disk type suits your needs, this decision tree shou
 
 For a video that covers some high level differences for the different disk types, and some ways for determining what impacts your workload requirements, see [Block storage options with Azure Disk Storage and Elastic SAN](https://youtu.be/igfNfUvgaDw).
 
-## Ultra disks
+## Ultra Disks
 
 Azure Ultra Disks are the highest-performing storage option for Azure virtual machines (VMs). You can change the performance parameters of an Ultra Disk without having to restart your VMs. Ultra Disks are suited for data-intensive workloads such as SAP HANA, top-tier databases, and transaction-heavy workloads.
 
 Ultra disks must be used as data disks and can only be created as empty disks. You should use Premium solid-state drives (SSDs) as operating system (OS) disks.
 
-### Ultra disk size
+### Ultra Disk size
 
 Ultra Disks offer up to 100 TiB per region per subscription by default, but Ultra Disks support higher capacity by request. To request an increase in capacity, request a quota increase or contact Azure Support.
 
@@ -61,16 +61,18 @@ The following table provides a comparison of disk sizes and performance caps to 
 
 |Disk Size (GiB)  |IOPS Cap  |Throughput Cap (MB/s)  |
 |---------|---------|---------|
-|4     |1,200         |300         |
-|8     |2,400         |600         |
-|16     |4,800         |1,200         |
-|32     |9,600         |2,400         |
-|64     |19,200         |4,900         |
-|128     |38,400         |9,800         |
-|256     |76,800         |10,000         |
-|512     |153,600         |10,000         |
-|1,024    |307,200        |10,000        |
+|4     |4,000 (1,200)         |1,000 (*300)         |
+|8     |8,000 (*2,400)         |2,000 (*600)         |
+|16     |16,000 (*4,800)         |4,000 (*1,200)         |
+|32     |32,000 (*9,600)         |8,000 (*2,400)         |
+|64     |64,000 (*19,200)         |10,000 (*4,900)         |
+|128     |128,000 (*38,400)         |10,000 (*9,800)         |
+|256     |256,000 (*76,800)         |10,000         |
+|512     |400,000 (*153,600)         |10,000         |
+|1,024    |400,000 (*307,200)        |10,000        |
 |2,048-65,536 (sizes in this range increasing in increments of 1 TiB)     |400,000         |10,000         |
+
+/** Only applies to Ultra Disks deployed using Virtual Machine Scale Sets
 
 ### Ultra Disk performance
 
@@ -78,9 +80,10 @@ Ultra Disks are designed to provide low sub millisecond latencies. Ultra Disks a
 
 ### Ultra Disk IOPS
 
-Ultra Disks support IOPS limits of 300 IOPS/GiB, up to a maximum of 400,000 IOPS per disk. To achieve the target IOPS for the disk, ensure that the selected disk IOPS are less than the VM IOPS limit. Ultra Disks with greater IOPS can be used as shared disks to support multiple VMs.
+Ultra Disks support IOPS limits of 1000 (300 for Ultra Disks deployed using Virtual Machine Scale Sets) IOPS/GiB, up to a maximum of 400,000 IOPS per disk. To achieve the target IOPS for the disk, ensure that the selected disk IOPS are less than the VM IOPS limit. Ultra Disks with greater IOPS can be used as shared disks to support multiple VMs. The minimum guaranteed IOPS per disk is 100.
 
-The minimum guaranteed IOPS per disk are 1 IOPS/GiB, with an overall baseline minimum of 100 IOPS. For example, if you provisioned a 4-GiB Ultra Disk, the minimum IOPS for that disk is 100, instead of four.
+> [!NOTE]
+> Only for Ultra Disks deployed using Virtual Machine Scale Sets: The minimum guaranteed IOPS per disk are 1 IOPS/GiB, with an overall baseline minimum of 100 IOPS. For example, if you provisioned a 4-GiB Ultra Disk, the minimum IOPS for that disk is 100, instead of four.
 
 For more information about IOPS, see [Virtual machine and disk performance](disks-performance.md).
 

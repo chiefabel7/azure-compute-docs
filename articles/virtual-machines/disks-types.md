@@ -61,7 +61,7 @@ The following table provides a comparison of disk sizes and performance caps to 
 
 |Disk Size (GiB)  |IOPS Cap  |Throughput Cap (MB/s)  |
 |---------|---------|---------|
-|4     |4,000 (1,200)         |1,000 (*300)         |
+|4     |4,000 (*1,200)         |1,000 (*300)         |
 |8     |8,000 (*2,400)         |2,000 (*600)         |
 |16     |16,000 (*4,800)         |4,000 (*1,200)         |
 |32     |32,000 (*9,600)         |8,000 (*2,400)         |

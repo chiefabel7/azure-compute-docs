@@ -49,13 +49,13 @@ For a video that covers some high level differences for the different disk types
 
 Azure Ultra Disks are the highest-performing storage option for Azure virtual machines (VMs). You can change the performance parameters of an Ultra Disk without having to restart your VMs. Ultra Disks are suited for data-intensive workloads such as SAP HANA, top-tier databases, and transaction-heavy workloads.
 
-Ultra disks must be used as data disks and can only be created as empty disks. You should use Premium solid-state drives (SSDs) as operating system (OS) disks.
+Ultra Disks must be used as data disks and can only be created as empty disks. For environments using Ultra Disks as data disks, use Premium solid-state drives (SSDs) as operating system (OS) disks.
 
 ### Ultra Disk size
 
-Ultra Disks offer up to 100 TiB per region per subscription by default, but Ultra Disks support higher capacity by request. To request an increase in capacity, request a quota increase or contact Azure Support.
+Ultra Disk sizes range from 4 GiB up to 64 GiB, they also work like Premium SSD, Standard SSD, and Standard HDD sizes. When you create or modify an Ultra Disk, the size you set is billed as the next largest provisioned disk size. So if you deploy a 200 GiB Ultra Disk or set a 200 GiB Ultra Disk, you'll have a 200 GiB Ultra Disk that's billed as if it was 256 GiB, since that's the next largest provisioned disk size.
 
-Ultra Disk sizes work like Premium SSD, Standard SSD, and Standard HDD sizes. When you create or modify an Ultra Disk, the size you set is billed as the next largest provisioned disk size. So if you were to deploy a 200 GiB Ultra Disk or set a 200 GiB Ultra Disk, you'll have a 200 GiB Ultra Disk that's billed as if it was 256 GiB, since that's the next largest provisioned disk size.
+Ultra Disks offer up to 100 TiB per region per subscription by default and Ultra Disks support higher capacity by request. To request an increase in capacity, request a quota increase or contact Azure Support.
 
 The following table provides a comparison of disk sizes and performance caps to help you decide which to use.
 
@@ -76,7 +76,7 @@ The following table provides a comparison of disk sizes and performance caps to 
 
 ### Ultra Disk performance
 
-Ultra Disks are designed to provide low sub millisecond latencies. Ultra Disks are also designed to provide their provisioned IOPS and throughput 99.99% of the time. Ultra Disks also feature a flexible performance configuration model that allows you to independently configure IOPS and throughput, before and after you provision the disk. You can adjust the performance of an Ultra Disk four times within a 24 hour period. Ultra Disks come in several fixed sizes, ranging from 4 GiB up to 64 TiB.
+Ultra Disks are designed to provide consistently low sub millisecond latencies and the highest limits for IOPS and throughput. Ultra Disks feature a flexible performance configuration model that allows you to independently configure IOPS and throughput, before and after you provision the disk. You can adjust the performance of an Ultra Disk at runtime without detaching the disk from the VM. Within a 24 hour period, you can change the performance of a disk four times. It can take up to an hour for a performance change to take effect.
 
 ### Ultra Disk IOPS
 
@@ -89,7 +89,10 @@ For more information about IOPS, see [Virtual machine and disk performance](disk
 
 ### Ultra Disk throughput
 
-The throughput limit of a single Ultra Disk is 256-kB/s for each provisioned IOPS, up to a maximum of 10,000 MB/s per disk (where MB/s = 10^6 Bytes per second). The minimum guaranteed throughput per disk is 4kB/s for each provisioned IOPS, with an overall baseline minimum of 1 MB/s.
+The maximum throughput limit of an Ultra Disk is .25 MB/s for each provisioned IOPS, up to a maximum of 10,000 MB/s per disk (where MB/s = 10^6 Bytes per second). The minimum guaranteed throughput of an Ultra Disk is 1 MB/s.
+
+> [!NOTE]
+> Only for Ultra Disks deployed using Virtual Machine Scale Sets: The minimum throughput of an Ultra Disk is 256-kB/s (or 1/256 MB/s) per provisioned IOPS. So if you provisioned a 500 GiB, 500 IOPS Ultra Disk, the minimum throughput for that disk would be 2 MB/s and the maximum throughput that can be provisioned is 125 MB/s.
 
 You can adjust Ultra Disk IOPS and throughput performance at runtime without detaching the disk from the virtual machine. After a performance resize operation has been issued on a disk, it can take up to an hour for the change to take effect. Up to four performance resize operations are permitted during a 24-hour window.
 

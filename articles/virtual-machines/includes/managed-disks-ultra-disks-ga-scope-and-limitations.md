@@ -4,7 +4,7 @@ description: include file
 author: roygara
 ms.service: azure-disk-storage
 ms.topic: include
-ms.date: 07/10/2025
+ms.date: 10/01/2025
 ms.author: rogarana
 ms.custom: include file
 # Customer intent: As a cloud architect, I want to understand the limitations and requirements of Ultra Disks so that I can evaluate their suitability for my virtual machine deployments and ensure compliance with application needs and infrastructure capabilities.
@@ -17,7 +17,6 @@ The following list contains Ultra Disk's limitations:
 - Ultra Disks don't support availability sets.
 - Existing disks currently can't change their type to an Ultra Disk. They must be [migrated](/azure/virtual-machines/disks-convert-types?tabs=azure-powershell#migrate-to-premium-ssd-v2-or-ultra-disk-using-snapshots).
 - (Preview) You can encrypt Ultra Disks with customer-managed keys using Azure Key Vaults stored in a different Microsoft Entra ID tenant.
-- Azure Site Recovery for VMs with Ultra Disks is currently in [Public Preview](/azure/site-recovery/azure-to-azure-support-matrix).
 - Ultra Disks don't support disk caching.
 - Snapshots are supported with [other limitations](/azure/virtual-machines/disks-incremental-snapshots?tabs=azure-powershell#incremental-snapshots-of-premium-ssd-v2-and-ultra-disks).
 

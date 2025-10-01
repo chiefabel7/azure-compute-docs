@@ -72,7 +72,7 @@ The following table provides a comparison of disk sizes and performance caps to 
 |1,024    |400,000 (*307,200)        |10,000        |
 |2,048-65,536 (sizes in this range increasing in increments of 1 TiB)     |400,000         |10,000         |
 
-/** Only applies to Ultra Disks deployed using Virtual Machine Scale Sets
+\** Only applies to Ultra Disks deployed using Virtual Machine Scale Sets
 
 ### Ultra Disk performance
 

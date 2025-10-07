@@ -32,3 +32,6 @@ Take advantage of the latest performance and features available for your workloa
 Utilize Microsoft's in-house designed ARM processors with [Azure Cobalt VMs](../../../virtual-machines/sizes/cobalt-overview.md).
 
 Learn how to [Monitor Azure virtual machines](../../../virtual-machines/monitor-vm.md).
+
+> [!NOTE]
+> As of X/Y date, Dsv4 VMs support both the MANA and NetSVC network interfaces. Please refer to following documentation for more details on the impact to existing VMs.

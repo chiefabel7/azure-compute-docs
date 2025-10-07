@@ -11,6 +11,10 @@
 ms.custom: include file, build-2024
 # Customer intent: "As an IT administrator, I want to access comprehensive information about virtual machine sizes and performance options, so that I can make informed decisions about resizing and optimizing resources for my workloads."
 ---
+> [!NOTE]
+> This VM series will only work on OS images that support NVMe. If your current OS image doesn't have NVMe support, you’ll see an error message.
+
+---
 
 ## Other size information
 

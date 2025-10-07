@@ -11,12 +11,6 @@
 ms.custom: include file, build-2024
 # Customer intent: "As an IT administrator, I want to access comprehensive information about virtual machine sizes and performance options, so that I can make informed decisions about resizing and optimizing resources for my workloads."
 ---
-> [!NOTE]
-> As of X/Y date, Dsv4 VMs support both the MANA and NetSVC network interfaces. Please refer to following documentation for more details on the impact to existing VMs.
-
-
----
-
 ## Other size information
 
 List of all available sizes: [Sizes](../../sizes.md)

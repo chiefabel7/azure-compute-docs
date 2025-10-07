@@ -92,7 +92,7 @@ For more information about IOPS, see [Virtual machine and disk performance](disk
 The maximum throughput limit of an Ultra Disk is .25 MB/s for each provisioned IOPS, up to a maximum of 10,000 MB/s per disk (where MB/s = 10^6 Bytes per second). The minimum guaranteed throughput of an Ultra Disk is 1 MB/s.
 
 > [!NOTE]
-> Only for Ultra Disks deployed using Virtual Machine Scale Sets: The minimum throughput of an Ultra Disk is 256-kB/s (or 1/256 MB/s) per provisioned IOPS. So if you provisioned a 500 GiB, 500 IOPS Ultra Disk, the minimum throughput for that disk would be 2 MB/s and the maximum throughput that can be provisioned is 125 MB/s.
+> Only for Ultra Disks deployed using Virtual Machine Scale Sets: The minimum throughput of an Ultra Disk is 4-kB/s (or 1/256 MB/s) per provisioned IOPS. So if you provisioned a 500 GiB, 500 IOPS Ultra Disk, the minimum throughput for that disk would be 2 MB/s and the maximum throughput that can be provisioned is 125 MB/s.
 
 You can adjust Ultra Disk IOPS and throughput performance at runtime without detaching the disk from the virtual machine. After a performance resize operation has been issued on a disk, it can take up to an hour for the change to take effect. Up to four performance resize operations are permitted during a 24-hour window.
 

@@ -17,5 +17,5 @@ ms.custom: include file
 | Memory         | 8 - 256 GiB          |                                                    |
 | Local Storage  |  None     |  |
 | Remote Storage | 4 - 32 Disks    | 3200 - 80000 IOPS <br>48 - 1200 MBps                     |
-| Network        | 2 - 8 NICs          | 5000 - 30000 Mbps <br> Supported Interfaces: NetSVC and MANA  |                |
+| Network        | 2 - 8 NICs          | 5000 - 30000 Mbps <br> Supported Interfaces: NetSVC, MANA  |                |
 | Accelerators   | None              |                                                     |

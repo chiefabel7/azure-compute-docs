@@ -73,13 +73,13 @@ You can set the _InstantAccessDurationMins_ parameter to create IA Snapshots for
 
 :::row:::
     :::column:::
-    ![Screenshot. Your disk's blade, with **+Create snapshot** highlighted, as that is what you must select.](../media/image1.png)
+    :::image type="content" source="../media/disks-instant-access-snapshots/create-snapshot-using-portal.png" alt-text="Screenshot for creating snapshot using portal"
     :::column-end:::
 :::row-end:::
 
 1. **Select the resource group you'd like to use and enter a name.**
 
-   :::image type="content" source="../media/image2.png" alt-text="A screenshot of a computer
+   :::image type="content" source="../media/disks-instant-access-snapshots/enable-instant-access-using-portal.png" alt-text="Screenshot for enabling instant access snapshot"
    
    AI-generated content may be incorrect." border="true":::
 
@@ -123,3 +123,4 @@ AI-generated content may be incorrect." border="true":::
 
 
 [Check Snapshot Instant Access State](#)
+

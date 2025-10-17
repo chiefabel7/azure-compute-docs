@@ -15,4 +15,5 @@ ms.reviewer: mattmcinnes
 
 [!INCLUDE [dsv7-summary](./includes/dsv7-series-summary.md)]
 
-
+## Host specifications
+[!INCLUDE [dsv7-series-specs](./includes/dsv7-series-specs.md)]

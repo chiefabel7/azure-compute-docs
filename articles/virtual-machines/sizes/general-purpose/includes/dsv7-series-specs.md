@@ -13,9 +13,9 @@ ms.custom: include file
 ---
 | Part | Quantity <br><sup>Count Units | Specs <br><sup>SKU ID, Performance Units, etc.  |
 |---|---|---|
-| Processor      | 2 - 372 vCPUs       | Intel Xeon Platinum 8573C (Emerald Rapids) [x86-64]                               |
+| Processor      | 2 - 372 vCPUs       |Intel@ Xeon® 6 processor (Granite Rapids [x86-64]                               |
 | Memory         | 8 - 1488 GiB          |                                  |
 | Local Storage  | None           |                                |
 | Remote Storage | 10 - 64 Disks    | 4000 - 500000 IOPS <br>118 - 16000 MBps   |
-| Network        | 2 - 8 NICs          | 12500 - 82000 Mbps                          |
+| Network        | 3 - 15 NICs          | 16,000 - 200,000 Mbps                          |
 | Accelerators   | None              |                                   |

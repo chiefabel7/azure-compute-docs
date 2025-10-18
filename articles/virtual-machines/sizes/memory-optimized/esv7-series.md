@@ -13,4 +13,3 @@ ms.reviewer: mattmcinnes
 
 # Esv7 sizes series 
 
-[!INCLUDE [esv7-summary](./includes/esv7-series-summary.md)]

@@ -13,6 +13,9 @@ ms.reviewer: mattmcinnes
 
 # Esv7 sizes series  
 
-[!INCLUDE [esv6-summary](./includes/esv6-series-summary.md)]
+[!INCLUDE [esv7-summary](./includes/esv7-series-summary.md)]
+
  
+## Host specifications
+[!INCLUDE [esv7-series-specs](./includes/esv7-series-specs.md)]
 

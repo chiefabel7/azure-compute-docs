@@ -1,5 +1,5 @@
 ---
-title: Esv6-series summary include file
+title: Esv7-series summary include file
 description: Include file for Esv6-series summary
 author: mattmcinnes
 ms.topic: include

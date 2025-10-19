@@ -1,6 +1,6 @@
 ---
 title: Esv7 series specs include
-description: Include file containing specifications of Esv6-series VM sizes.
+description: Include file containing specifications of Esv7-series VM sizes.
 author: mattmcinnes
 ms.topic: include
 ms.service: azure-virtual-machines
@@ -17,6 +17,6 @@ ms.custom: include file
 | Memory         | 16 - 2,826 GiB        |    |
 | Local Storage  | None         |  |
 | Remote Storage | 10 - 64 Disks        | 4,000 - 5,000,000 IOPS <br>118 - 16,000 MBps |
-| Network        | 4 - 15 NICs        | 16,000 - 400,000 Mbps |
+| Network        | 3 - 15 NICs        | 16,000 - 400,000 Mbps |
 | Accelerators   | None            |     |
 

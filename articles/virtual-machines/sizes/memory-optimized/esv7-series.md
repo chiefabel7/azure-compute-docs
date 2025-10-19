@@ -106,9 +106,9 @@ Network interface info for each size
 | Standard_E64s_v7 | 15 | 45,000 |
 | Standard_E96s_v7 | 15 | 70,000 |
 | Standard_E128s_v7 | 15 | 85,000 |
-| Standard_E192is_v7 | 15 | 100,000 |
-| Standard_E248is_v7 | 15 | 150,000 |
-| Standard_E372is_v7 | 15 | 400,000 |
+| Standard_E192s_v7 | 15 | 100,000 |
+| Standard_E248s_v7 | 15 | 150,000 |
+| Standard_E372s_v7 | 15 | 400,000 |
 
 #### Networking resources
 - [Virtual networks and virtual machines in Azure](/azure/virtual-network/network-overview)

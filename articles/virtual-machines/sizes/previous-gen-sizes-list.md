@@ -16,7 +16,7 @@ ms.reviewer: iamwilliew
 This article provides a list of all size series that are considered *previous-gen*. Status is listed as *next-gen available* or *capacity limited* based on capacity. For sizes that require it there are *migration guides* to help move to replacement sizes.
 
 > [!NOTE]
-> Series listed as *previous-gen* are **not currently retired** and can still be used. However, Virtual Machines (VMs) announced for retirement will have restrictions when deploying through new subscriptions. To view retired size series, see [Retired Azure VM size series](./retired-sizes-list.md).
+> Series listed as *previous-gen* are **not currently retired** and can still be used. However, series announced for retirement will have restrictions when deploying through new subscriptions. To view retired size series, see [Retired Azure VM size series](./retired-sizes-list.md).
 
 ## What are previous-gen size series?
 Previous generation virtual machine size series are running on older hardware. While they can still be used and are fully supported, there are newer generations available. It's recommended to migrate to the latest generation replacements.

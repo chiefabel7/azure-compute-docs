@@ -775,6 +775,8 @@
       href: quotas.md
     - name: Constrained vCPUs
       href: constrained-vcpu.md
+    - name: VM Customization
+      href: vm-customization.md
     - name: Azure VMs with no temp disk
       href: azure-vms-no-temp-disk.yml
     - name: Azure VM sizes naming conventions
@@ -1150,6 +1152,8 @@
     - name: Modify a capacity reservation
       displayName: on-demand capacity reservation
       href: capacity-reservation-modify.md
+    - name: Share a capacity reservation group
+      href: capacity-reservation-group-share.md
     - name: Associate a VM
       displayName: on-demand capacity reservation
       href: capacity-reservation-associate-vm.md
@@ -2428,25 +2432,17 @@
     - name: VM size series retirement migration guides
       items:
       - name: General-purpose sizes
-        items:
-        - name: D-series migration guide
-          href: ./migration/sizes/d-ds-dv2-dsv2-ls-series-migration-guide.md
-        - name: Ds-series migration guide
-          href: ./migration/sizes/d-ds-dv2-dsv2-ls-series-migration-guide.md
-        - name: Dsv2-series migration guide
-          href: ./migration/sizes/d-ds-dv2-dsv2-ls-series-migration-guide.md
+        href: ./migration/sizes/d-ds-dv2-dsv2-ls-series-migration-guide.md
       - name: Storage-optimized sizes
-        items:
-        - name: Ls-series migration guide
-          href: ./migration/sizes/d-ds-dv2-dsv2-ls-series-migration-guide.md
+        href: ./migration/sizes/d-ds-dv2-dsv2-ls-series-migration-guide.md
       - name: GPU-accelerated sizes
         items:
         - name: N-series migration guide
           href: ./migration/sizes/n-series-migration.md
         - name: NV-series migration guide
           href: ./migration/sizes/nv-series-migration-guide.md
-    - name: Dedicated Host migration guide
-      href: ./migration/dedicated-host-migration-guide.md
+      - name: Dedicated Host migration guide
+        href: ./migration/dedicated-host-migration-guide.md
 - name: Infrastructure automation
   items:
   - name: Overview

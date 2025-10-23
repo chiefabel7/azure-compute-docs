@@ -26,7 +26,7 @@ If your VM uses Premium Storage, make sure that you choose an **s** version of t
 ## Change the VM size
 
 > [!Note] 
-> If a resize operation **fails**, the VM model **may display the desired VM size**. However, the virtual machine will **continue running** on its **previous size until** a **new allocation attempt succeeds**. The Azure portal may temporarily show the resized SKU even though the VM is still operating with the earlier configuration.
+> If a resize operation **fails**, the **VM model will still display the requested size**, but the **VM will continue running on its previous size** until the resize is successfully allocated. This behavior applies to both the Azure portal and all GET operations, as the displayed size always reflects the latest applied configuration, not the actual running size.
 >
 
 ### [Portal](#tab/portal)

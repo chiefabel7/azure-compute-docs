@@ -121,7 +121,7 @@ New-AzSnapshot -ResourceGroupName $resourceGroupName -SnapshotName $snapshotName
 1. Select the resource group you'd like to use and enter a name for your snapshot.
 1. Select **Enable instant access** and select **Review + Create**
 
-:::image type="content" source="media/disks-instant-access-snapshot/disks-enable-instant-access.png" alt-text="Screenshot displaying enable instant access checked in the snapshot creation process.":::
+:::image type="content" source="media/disks-instant-access-snapshots/disks-enable-instant-access.png" alt-text="Screenshot displaying enable instant access checked in the snapshot creation process.":::
 
 #### [Resource Manager Template](#tab/azure-resource-manager)
 
@@ -194,4 +194,4 @@ az resource show --ids $snapshotId --query "properties.creationData.instantAcces
 
 Access your snapshot in the [Azure portal](https://portal.azure.com), the access state is displayed under **Essentials** on **Overview**.
 
-:::image type="content" source="media/disks-instant-access-snapshot/disks-snapshot-instant-access-state.png" alt-text="Screenshot displaying the acesss state of a snapshot in the Azure portal." lightbox="media/disks-instant-access-snapshot/disks-snapshot-instant-access-state.png":::
+:::image type="content" source="media/disks-instant-access-snapshots/disks-snapshot-instant-access-state.png" alt-text="Screenshot displaying the acesss state of a snapshot in the Azure portal." lightbox="media/disks-instant-access-snapshot/disks-snapshot-instant-access-state.png":::

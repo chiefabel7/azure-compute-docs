@@ -3,7 +3,7 @@ title: Select a disk type for Azure IaaS VMs - managed disks
 description: Learn about the available Azure disk types for virtual machines, including Ultra Disks, Premium SSDs v2, Premium SSDs, standard SSDs, and Standard HDDs.
 author: roygara
 ms.author: rogarana
-ms.date: 10/13/2025
+ms.date: 10/23/2025
 ms.topic: concept-article
 ms.service: azure-disk-storage
 ms.custom: references_regions
@@ -61,16 +61,19 @@ The following table provides a comparison of disk sizes and performance caps to 
 
 |Disk Size (GiB)  |IOPS Cap  |Throughput Cap (MB/s)  |
 |---------|---------|---------|
-|4     |4,000          |1,000          |
-|8     |8,000          |2,000          |
-|16     |16,000         |4,000          |
-|32     |32,000          |8,000          |
-|64     |64,000          |10,000          |
-|128     |128,000          |10,000          |
-|256     |256,000          |10,000         |
-|512     |400,000          |10,000         |
-|1,024    |400,000         |10,000        |
+|4     |4,000 (1,200)*          |1,000 (300)*         |
+|8     |8,000 (2,400)*          |2,000 (600)*          |
+|16     |16,000 (4,800)*        |4,000 (1,200)*          |
+|32     |32,000 (9,600)*         |8,000 (2,400)*          |
+|64     |64,000 (19,200)*         |10,000 (4,900)*          |
+|128     |128,000 (38,400)*         |10,000 (9,800)*          |
+|256     |256,000 (76,000)*         |10,000         |
+|512     |400,000 (153,000)*         |10,000         |
+|1,024    |400,000 (307,200)*        |10,000        |
 |2,048-65,536 (sizes in this range increasing in increments of 1 TiB)     |400,000         |10,000         |
+
+\** Only applies during deployment of Uniform Virtual Machine Scale Sets Uniform. Setting a higher value during deployment results in a failed deployment. After deployment completes you can [increase the performance](disks-enable-ultra-ssd.md#adjust-the-performance-of-an-ultra-disk) of your disks.
+
 
 ### Ultra Disk performance
 
@@ -78,13 +81,19 @@ Ultra Disks are designed to provide consistently low sub millisecond latencies a
 
 ### Ultra Disk IOPS
 
-Ultra Disks support IOPS limits of 1000 IOPS/GiB, up to a maximum of 400,000 IOPS per disk. To achieve the target IOPS for the disk, ensure that the selected disk IOPS are less than the VM IOPS limit. Ultra Disks with greater IOPS can be used as shared disks to support multiple VMs. The minimum guaranteed IOPS per disk is 100.
+Ultra Disks support IOPS limits of 1000 (300 only during deployment of Ultra Disks while using Virtual Machine Scale Sets Uniform) IOPS/GiB, up to a maximum of 400,000 IOPS per disk. To achieve the target IOPS for the disk, ensure that the selected disk IOPS are less than the VM IOPS limit. Ultra Disks with greater IOPS can be used as shared disks to support multiple VMs. The minimum guaranteed IOPS per disk is 100.
+
+> [!NOTE]
+> Only during deployment of Ultra Disks while using Uniform Virtual Machine Scale Sets: The minimum guaranteed IOPS per disk are 1 IOPS/GiB, with an overall baseline minimum of 100 IOPS. If you exceed these limits at deployment, the deployment fails. You can [increase the performance](disks-enable-ultra-ssd.md#adjust-the-performance-of-an-ultra-disk) of these disks once deployment completes.
 
 For more information about IOPS, see [Virtual machine and disk performance](disks-performance.md).
 
 ### Ultra Disk throughput
 
 The maximum throughput limit of an Ultra Disk is .25 MB/s for each provisioned IOPS, up to a maximum of 10,000 MB/s per disk (where MB/s = 10^6 Bytes per second). The minimum guaranteed throughput of an Ultra Disk is 1 MB/s.
+
+> [!NOTE]
+> Only during deployment of Ultra Disks while using Uniform Virtual Machine Scale Sets: The minimum throughput of an Ultra Disk is 256-kB/s per provisioned IOPS. So if you provision a 500 GiB, 500 IOPS Ultra Disk, the minimum throughput for that disk would be 2 MB/s and the maximum throughput that can be provisioned is 125 MB/s.
 
 You can adjust Ultra Disk IOPS and throughput performance at runtime without detaching the disk from the virtual machine. After a performance resize operation has been issued on a disk, it can take up to an hour for the change to take effect. Up to four performance resize operations are permitted during a 24-hour window.
 

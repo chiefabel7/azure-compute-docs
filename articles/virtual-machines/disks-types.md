@@ -72,7 +72,7 @@ The following table provides a comparison of disk sizes and performance caps to 
 |1,024    |400,000 (307,200)*        |10,000        |
 |2,048-65,536 (sizes in this range increasing in increments of 1 TiB)     |400,000         |10,000         |
 
-\** Only applies during deployment of Uniform Virtual Machine Scale Sets Uniform. Setting a higher value during deployment results in a failed deployment. After deployment completes you can [increase the performance](disks-enable-ultra-ssd.md#adjust-the-performance-of-an-ultra-disk) of your disks.
+\* Only applies during deployment of Uniform Virtual Machine Scale Sets Uniform. Setting a higher value during deployment results in a failed deployment. After deployment completes you can [increase the performance](disks-enable-ultra-ssd.md#adjust-the-performance-of-an-ultra-disk) of your disks.
 
 
 ### Ultra Disk performance

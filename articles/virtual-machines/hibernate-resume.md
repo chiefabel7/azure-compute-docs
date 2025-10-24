@@ -4,7 +4,7 @@ description: Overview of hibernating your VM.
 author: mattmcinnes
 ms.service: azure-virtual-machines
 ms.topic: how-to
-ms.date: 05/14/2024
+ms.date: 10/24/2025
 ms.author: jainan
 ms.reviewer: mattmcinnes
 ms.custom:

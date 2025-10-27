@@ -56,7 +56,7 @@ After specified `InstantAccessDurationMins`, the snapshot becomes to a Standard 
 
 Instant access snapshots are currently supported in France Central, East Asia, Brazil South, Brazil Southeast, UK West, North Central US, Poland Central, Switzerland North, South Africa North, Japan East, Australia Central, Qatar Central, and Norway East.
 
-#### Billing of instant access snapshots of Ultra Disks and Premium SSD v2 disks
+### Billing of instant access snapshots of Ultra Disks and Premium SSD v2 disks
 
 During preview, there's no billing for Instant access snapshots for Ultra Disks and Premium SSD v2 disks. Learn more about Instant Access Snapshot pricing in [here](https://aka.ms/InstantAccessPricingPlaceHolder).
 

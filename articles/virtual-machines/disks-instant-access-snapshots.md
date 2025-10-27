@@ -25,13 +25,14 @@ Azure automatically initiates a background data copy from the snapshot to the di
 
 ### Limitations
 
-You can't use the `CompletionPercent` property to gauge the progress of the background data copy. For snapshots of these disk types, it always reports 100%, even while in progress.
+- You can't use the CompletionPercent property to gauge the progress of the background data copy for snapshots created from Premium SSD, Standard SSD, and Standard HDD disks, or for the disk hydration process from those snapshots. It always reports 100%, even while in progress.
+- Premium SSD, Standard SSD, and Standard HDD disks created from snapshots will experience temporary performance degradation until the background copy completes. To reduce latency, use Premium Storage snapshots.
 
 ## Snapshots of Ultra Disks and Premium SSD v2
 
 Snapshots of Ultra Disks and Premium SSD v2 aren't instant access snapshots, unless you're using the instant access preview. Snapshots of Ultra Disks and Premium SSD v2 disks can't be used until the background data copy completes. You can monitor the background data copy by [checking the snapshot status](disks-incremental-snapshots.md#check-snapshot-status).
 
-### Instant access snapshots of Ultra Disks and Premium SSD v2 (preview)
+### Instant Access Snapshots of Ultra Disks and Premium SSD v2 (preview)
 
 For snapshots of Ultra Disks and Premium SSD v2 disks, instant access snapshots are available as a preview. When you create an instant access snapshot of an Ultra Disk or a Premium SSD v2 disk, you can immediately use that snapshot to create a new disk. The background data copy from the source disk to the new snapshot must complete before you can download the underlying data or copy the snapshot to another Azure region. Ultra Disks and Premium SSD v2 disks  created from instant access snapshots are rapidly hydrated with minimal performance impact.
 

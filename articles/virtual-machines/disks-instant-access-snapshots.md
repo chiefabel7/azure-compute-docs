@@ -10,7 +10,7 @@ ms.custom: references_regions
 # Customer intent: As a cloud administrator, I want to create incremental snapshots for managed disks, so that I can efficiently back up and restore disk data while minimizing storage costs and improving performance.
 ---
 
-# Instant access snapshot
+# Instant access snapshot 
 
 Azure Managed Disk Snapshots provide point-in-time backups of disks that can be used as backup during software upgrade, disaster recovery, or creating new environments. When creating snapshots from Azure Managed Disks, Azure automatically copies the data from the disk to the snapshot in the background. 
 

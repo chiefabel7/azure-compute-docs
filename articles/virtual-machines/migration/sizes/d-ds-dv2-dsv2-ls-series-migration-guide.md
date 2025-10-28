@@ -78,7 +78,7 @@ Refer to the full [Azure VM resizing guide](/azure/virtual-machines/sizes/resize
 
 ## FAQ
 #### Q: Which Sizes Are Being Retired?
-Review retired sizes using the [Azure retirement](https://learn.microsoft.com/azure/virtual-machines/sizes/retirement/retired-sizes-list) page. 
+To review retired sizes, see [retired Azure VM sizes](https://learn.microsoft.com/azure/virtual-machines/sizes/retirement/retired-sizes-list).
 
 #### Q: Why Should I Migrate?
 

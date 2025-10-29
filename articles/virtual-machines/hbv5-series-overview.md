@@ -37,23 +37,24 @@ The following diagram shows the topology of the server. We reserve these 16 hype
 
 ![Screenshot of HBv5-series server Topology](./media/hpc/architecture/hbv5/hbv5-topology-server.png)
 
-The CCD boundary is different from a NUMA boundary. On HBv5, a group of six (6) consecutive CCDs is configured as a NUMA domain, both at the host server level and within a guest VM. Thus, all HBv5 VM sizes expose four uniform NUMA domains that appear to an OS and application as shown below, each with different number of cores depending on the specific [HBv5 VM size](hbv5-series.md).
-
-![Screenshot of HBv5-series VM Topology](./media/hpc/architecture/hbv5/hbv5-topology-vm.jpg)
+The CCD boundary is different from a NUMA boundary. On HBv5, a group of six (6) consecutive CCDs is configured as a NUMA domain, both at the host server level and within a guest VM. Thus, all HBv5 VM sizes expose four uniform NUMA domains that appear to an OS and application as shown below, each with different number of cores depending on the specific [HBv5 VM size](./sizes/high-performance-compute/hbv5-series.md).
 
 Each HBv5 VM size is similar in physical layout, features, and performance of a different CPU from the AMD EPYC 9V33X, as follows:
 
 | HBv5-series VM size             | NUMA domains | Cores per NUMA domain  | Similarity with AMD EPYC         |
 |---------------------------------|--------------|------------------------|----------------------------------|
-Standard_HB176rs_v5               | 4            | 44                     | Dual-socket EPYC 9V33X           |
-Standard_HB176-144rs_v5           | 4            | 36                     | Dual-socket EPYC 9V33X           |
-Standard_HB176-96rs_v5            | 4            | 24                     | Dual-socket EPYC 9V33X           |
-Standard_HB176-48rs_v5            | 4            | 12                     | Dual-socket EPYC 9V33X           |
-Standard_HB176-24rs_v5            | 4            | 6                      | Dual-socket EPYC 9V33X           |
+Standard_HB368rs_v5               | 16           | 23                     | Dual-socket EPYC 9V33X           |
+Standard_HB368-336rs_v5           | 16           | 21                     | Dual-socket EPYC 9V33X           |
+Standard_HB368-288rs_v5           | 16           | 18                     | Dual-socket EPYC 9V33X           |
+Standard_HB368-240rs_v5           | 16           | 15                     | Dual-socket EPYC 9V33X           |
+Standard_HB368-192rs_v5           | 16           | 12                     | Dual-socket EPYC 9V33X           |
+Standard_HB368-144rs_v5           | 16           | 9                      | Dual-socket EPYC 9V33X           |
+Standard_HB368-96rs_v5            | 16           | 6                      | Dual-socket EPYC 9V33X           |
+Standard_HB368-48rs_v5            | 16           | 3                      | Dual-socket EPYC 9V33X           |
 
 > [!NOTE]
-> * The constrained cores VM sizes only reduce the number of physical cores exposed to the VM. All global shared assets (RAM, memory bandwidth, L3 cache, GMI and xGMI connectivity, InfiniBand, Azure Ethernet network, local SSD) stay constant. This allows a customer to pick a VM size best tailored to a given set of workload or software licensing needs.
-> * We are currently experiencing a core mapping issue on the HBv5-series parent size Standard_HB176rs_v5. 
+> * The constrained cores VM sizes only reduce the number of physical cores exposed to the VM. All global shared assets (RAM, memory bandwidth, L3 cache, GMI and xGMI connectivity, InfiniBand, Azure Ethernet network, local SSD) stay constant with the parent VM size. This allows a customer to pick a VM size best tailored to a given set of workload or software licensing needs.
+> * Four CPU cores/CCD are needed to saturate memory bandwidth. This means the Standard_HB368-144rs_v5, Standard_HB368-96rs_v5, and Standard_HB368-48rs_v5 VM sizes cannot utilize the full memory bandwidth of the server. 
 
 The virtual NUMA mapping of each HBv5 VM size is mapped to the underlying physical NUMA topology. There's no potential misleading abstraction of the hardware topology. 
 

@@ -67,25 +67,25 @@ lstopo-no-graphics --no-io --no-legend --of txt
 <details>
 <summary>Select to view lstopo output for Standard_HB368rs_v5</summary>
 
-![lstopo output for HBv5-176 VM](./media/hpc/architecture/hbv5/hbv5-368-lstopo.png)
+![lstopo output for HBv5-368 VM](./media/hpc/architecture/hbv5/hbv5-368-lstopo.png)
 </details>
 
 <details>
 <summary>Select to view lstopo output for Standard_HB368-336rs_v5</summary>
 
-![lstopo output for HBv5-24 VM](./media/hpc/architecture/hbv5/hbv5-336-lstopo.png)
+![lstopo output for HBv5-336 VM](./media/hpc/architecture/hbv5/hbv5-336-lstopo.png)
 </details>
 
 <details>
 <summary>Select to view lstopo output for Standard_HB368-240rs_v5</summary>
 
-![lstopo output for HBv5-24 VM](./media/hpc/architecture/hbv5/hbv5-240-lstopo.png)
+![lstopo output for HBv5-240 VM](./media/hpc/architecture/hbv5/hbv5-240-lstopo.png)
 </details>
 
 <details>
 <summary>Select to view lstopo output for Standard_HB368-288rs_v5</summary>
 
-![lstopo output for HBv5-24 VM](./media/hpc/architecture/hbv5/hbv5-288-lstopo.png)
+![lstopo output for HBv5-288 VM](./media/hpc/architecture/hbv5/hbv5-288-lstopo.png)
 </details>
 
 <details>
@@ -97,13 +97,13 @@ lstopo-no-graphics --no-io --no-legend --of txt
 <details>
 <summary>Select to view lstopo output for Standard_HB368-96rs_v5</summary>
 
-![lstopo output for HBv5-64 VM](./media/hpc/architecture/hbv5/hbv5-96-lstopo.png)
+![lstopo output for HBv5-96 VM](./media/hpc/architecture/hbv5/hbv5-96-lstopo.png)
 </details>
 
 <details>
 <summary>Select to view lstopo output for Standard_HB368-48rs_v5</summary>
 
-![lstopo output for HBv5-32 VM](./media/hpc/architecture/hbv5/hbv5-48-lstopo.png)
+![lstopo output for HBv5-48 VM](./media/hpc/architecture/hbv5/hbv5-48-lstopo.png)
 </details>
 
 ## InfiniBand networking

@@ -16,7 +16,7 @@ author: padmalathas
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Windows VMs :heavy_check_mark: Flexible scale sets :heavy_check_mark: Uniform scale sets
 
-An [HBv5-series](./sizes/high-performance-computing/hbv5-series.md) server features 4 * 96-core EPYC 9V33X CPUs for a total of 384 physical "Zen4" cores with AMD 3D-V Cache. Simultaneous Multithreading (SMT) is disabled on HBv5. These 384 cores are divided into 48 Core Chiplet Dies (CCDs) sections (12 per socket), and each CCD containing eight processor cores with uniform access to a 32 MB L3 cache. Azure HBv5 servers also run the following AMD BIOS settings: 
+An [HBv5-series](./sizes/high-performance-compute/hbv5-series.md) server features 4 * 96-core EPYC 9V33X CPUs for a total of 384 physical "Zen4" cores with AMD 3D-V Cache. Simultaneous Multithreading (SMT) is disabled on HBv5. These 384 cores are divided into 48 Core Chiplet Dies (CCDs) sections (12 per socket), and each CCD containing eight processor cores with uniform access to a 32 MB L3 cache. Azure HBv5 servers also run the following AMD BIOS settings: 
 
 ```bash
 Nodes per Socket (NPS) = 4
@@ -57,40 +57,52 @@ Standard_HB176-24rs_v5            | 4            | 6                      | Dual
 
 The virtual NUMA mapping of each HBv5 VM size is mapped to the underlying physical NUMA topology. There's no potential misleading abstraction of the hardware topology. 
 
-The exact topology for the various [HBv5 VM size](hbv5-series.md) appears as follows using the output of [lstopo](https://linux.die.net/man/1/lstopo):
+The exact topology for the various [HBv5 VM size](./sizes/high-performance-compute/hbv5-series.md) appears as follows using the output of [lstopo](https://linux.die.net/man/1/lstopo):
 
 ```bash
 lstopo-no-graphics --no-io --no-legend --of txt
 ```
 <br>
 <details>
-<summary>Select to view lstopo output for Standard_HB176rs_v5</summary>
+<summary>Select to view lstopo output for Standard_HB368rs_v5</summary>
 
-![lstopo output for HBv5-176 VM](./media/hpc/architecture/hbv5/hbv5-176-lstopo.png)
+![lstopo output for HBv5-176 VM](./media/hpc/architecture/hbv5/hbv5-368-lstopo.png)
 </details>
 
 <details>
-<summary>Select to view lstopo output for Standard_HB176-144rs_v5</summary>
+<summary>Select to view lstopo output for Standard_HB368-336rs_v5</summary>
+
+![lstopo output for HBv5-24 VM](./media/hpc/architecture/hbv5/hbv5-336-lstopo.png)
+</details>
+
+<details>
+<summary>Select to view lstopo output for Standard_HB368-240rs_v5</summary>
+
+![lstopo output for HBv5-24 VM](./media/hpc/architecture/hbv5/hbv5-240-lstopo.png)
+</details>
+
+<details>
+<summary>Select to view lstopo output for Standard_HB368-288rs_v5</summary>
+
+![lstopo output for HBv5-24 VM](./media/hpc/architecture/hbv5/hbv5-288-lstopo.png)
+</details>
+
+<details>
+<summary>Select to view lstopo output for Standard_HB368-144rs_v5</summary>
 
 ![lstopo output for HBv5-144 VM](./media/hpc/architecture/hbv5/hbv5-144-lstopo.png)
 </details>
 
 <details>
-<summary>Select to view lstopo output for Standard_HB176-96rs_v5</summary>
+<summary>Select to view lstopo output for Standard_HB368-96rs_v5</summary>
 
 ![lstopo output for HBv5-64 VM](./media/hpc/architecture/hbv5/hbv5-96-lstopo.png)
 </details>
 
 <details>
-<summary>Select to view lstopo output for Standard_HB176-48rs_v5</summary>
+<summary>Select to view lstopo output for Standard_HB368-48rs_v5</summary>
 
 ![lstopo output for HBv5-32 VM](./media/hpc/architecture/hbv5/hbv5-48-lstopo.png)
-</details>
-
-<details>
-<summary>Select to view lstopo output for Standard_HB176-24rs_v5</summary>
-
-![lstopo output for HBv5-24 VM](./media/hpc/architecture/hbv5/hbv5-24-lstopo.png)
 </details>
 
 ## InfiniBand networking

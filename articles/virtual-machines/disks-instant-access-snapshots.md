@@ -16,7 +16,7 @@ Azure Managed Disk Snapshots provide point-in-time backups of disks that can be 
 
 Snapshots of Premium SSD, Standard SSD, and Standard HDD disks are by default instant access snapshots. Immediately upon creation, these snapshots can be used to restore new disks, download underlying data, and copy to other Azure regions. 
 
-Snapshots of  Ultra Disks and Premium SSD v2 require the background data copy to complete before they can be used. To create new disks from snapshot immediately, you must explicitly set the Instant Access property during snapshot creation.
+By default, snapshots of Ultra Disks and Premium SSD v2 aren't an instant access snapshot and require the background data copy to complete before they can be used. Instant access snapshots of these disks are available as a preview, and you must explicitly opt to create an instant access snapshot when creating a snapshot of these disks.
 
 
 ## Snapshots of Premium SSD, Standard SSD, and Standard HDD disks

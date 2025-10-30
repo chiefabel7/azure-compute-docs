@@ -89,7 +89,7 @@ yourDiskID=$(az disk show -n $diskName -g $resourceGroupName --query "id" --outp
 
 # Create an instant access snapshot
 
-snapshot create -g $resourceGroupName -n $snapshotName --source $yourDiskID --incremental true --location eastus2euap  --sku Standard_ZRS --ia-duration 300 
+az snapshot create -g $resourceGroupName -n $snapshotName --source $yourDiskID --incremental true --location eastus2euap  --sku Standard_ZRS --ia-duration 300 
 ```
 
 #### [Azure PowerShell](#tab/azure-powershell)

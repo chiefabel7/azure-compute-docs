@@ -31,7 +31,7 @@ Disks created from snapshots of these disk types can be immediately attached to 
 
 ## Snapshots of Ultra Disks and Premium SSD v2
 
-By default, snapshots of Ultra Disks and Premium SSD v2 can't be used until the snapshot’s background data copy completes. To bypass this wait, you must explicitly set the Instant Access attribute during snapshot creation.
+By default, snapshots of Ultra Disks and Premium SSD v2 aren't instant access snapshots and can't be used until the snapshot’s background data copy completes. To bypass this, you can explicitly choose to create an instant access snapshot (available as a preview for these disk types) when creating a snapshot.
 
 Instant Access is a new snapshot attribute available when creating snapshots from Ultra Disks and Premium SSD v2. Once specified, the snapshot enters an Instant Access state for the duration defined by `InstantAccessDurationMins`. In this state, you can use snapshots to create disks immediately - no need to wait for the snapshot background data copy to complete. Disks created from snapshots in the Instant Access state can be attached to running virtual machines immediately and are rapidly hydrated with minimal performance impact.
 

@@ -23,7 +23,7 @@ By default, snapshots of Ultra Disks and Premium SSD v2 aren't an instant access
 
 Snapshots of Premium SSD, Standard SSD, and Standard HDD disk are instant access snapshots by default, allowing you to immediately create new disks of any supported disk types. As soon as snapshots are created, they support SAS URI generation so you can securely download data. You can also immediately copy snapshots of these disks to other Azure regions for regional disaster recovery. After snapshots are created, Azure automatically initiates data copy from the disk to the snapshots in the background.
 
-Disks created from snapshots can be attached to running Virtual Machines immediately, and Azure automatically initiates background data copy to hydrate the disk from snapshot data. Disks experience a temporary degradation of performance until the background data copy completes. To reduce latency, store your snapshots on Premium Storage instead of Standard Storage.
+Disks created from snapshots of these disk types can be immediately attached to running VMs, Azure automatically initiates a background data copy to hydrate the disk from snapshot data. Disks experience a temporary degradation of performance until their background data copy completes. To reduce latency, store your snapshots on Premium Storage instead of Standard Storage.
 
 ### Limitations
 

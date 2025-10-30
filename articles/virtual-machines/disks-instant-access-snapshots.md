@@ -52,7 +52,7 @@ After the time specified in `InstantAccessDurationMins` elapses, or five hours h
 - Attaching Ultra Disks and Premium SSD v2 across fault domains (using either a VM in an availability set or a Virtual Machine Scale Set) triggers the background data copy and prevents you from creating an instant access snapshot during the copy. 
 - Ultra Disks and Premium SSD v2 that have active instant access snapshots can't be attached across fault domains
 - To use Instant Access with Ultra Disks, the snapshot must be created from a newly provisioned Ultra Disks.
-- You cannot create instant access snapshot from Azure Portal.
+- You cannot create instant access snapshot from Azure portal.
 - Differences between snapshots created using Instant Access cannot be retrieved. 
 
 ### Regional availability
@@ -65,7 +65,7 @@ During preview, there's no billing for using Instant Access snapshots for Ultra 
 
 ### Create an instant access snapshot
 
-For Azure CLI, the Azure PowerShell module, and Azure Resource Manager templates, creating an instant access snapshot of an Ultra Disk or a Premium SSD v2 is similar to creating a snapshot. When creating a snapshot of an Ultra Disk or Premium SSD v2, you use the same commands but you add an additonal parameter that specifies the duration (minimum 60 minutes, maximum 300 minutes) that snapshot remains an instant access snapshot. After the duration expires or five hours elapses (whichever comes first) the snapshot automatically reverts to standard storage. You can monitor your snapshot's state by [checking the snapshot's access state](#check-snapshot-access-state).
+For Azure CLI, the Azure PowerShell module, and Azure Resource Manager templates, creating an instant access snapshot of an Ultra Disk or a Premium SSD v2 is similar to creating a snapshot. When creating a snapshot of an Ultra Disk or Premium SSD v2, you use the same commands but you add an additional parameter that specifies the duration (minimum 60 minutes, maximum 300 minutes) that snapshot remains an instant access snapshot. After the duration expires or five hours elapses (whichever comes first) the snapshot automatically reverts to standard storage. You can monitor your snapshot's state by [checking the snapshot's access state](#check-snapshot-access-state).
 
 In the Azure portal, you can't specify a duration, so snapshots created through the portal remain instant access snapshots for 300 minutes (5 hours).
 

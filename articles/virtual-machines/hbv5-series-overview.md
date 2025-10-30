@@ -107,9 +107,79 @@ lstopo-no-graphics --no-io --no-legend --of txt
 </details>
 
 ## InfiniBand networking
-HBv5 VMs also feature NVIDIA Mellanox NDR InfiniBand network adapters (ConnectX-7) operating at up to 400 Gigabits/sec. The NIC is passed through to the VM via SRIOV, enabling network traffic to bypass the hypervisor. As a result, customers load standard Mellanox OFED drivers on HBv5 VMs as they would a bare metal environment.
+HBv5 VMs also feature 4 NVIDIA Quantum-2 CX7 InfiniBand (NDR) adapters each operating at up to 200 Gigabits/sec for a total of 800 Gigabits/sec per VM. One NIC connects to each of the 4 CPUs on each VM. The NIC is passed through to the VM via SRIOV, enabling network traffic to bypass the hypervisor. As a result, customers load standard Mellanox OFED drivers on HBv5 VMs as they would a bare metal environment.
 
 HBv5 VMs support Adaptive Routing, Dynamic Connected Transport (DCT, in addition to the standard RC and UD transports), and hardware-based offload of MPI collectives to the onboard processor of the ConnectX-7 adapter. These features enhance application performance, scalability, and consistency, and usage of them is recommended.
+
+# Best practices for InfiniBand configuration
+
+*   Use a validated VM image. Choose an image with tested drivers and NDR InfiniBand-ready software:
+    *   **Recommended**: AlmaLinux 8.10 from the AlmaLinux HPC shared image gallery  
+        *Access can be provided by the Azure HPC team; this image is built using Azure HPC VM Image scripts.*
+    *   **Also supported**: Azure HPC marketplace images (Ubuntu-HPC 18.04, Ubuntu-HPC 20.04)
+
+*   Select the optimal InfiniBand transport protocol
+    *   For *smaller-scale jobs*:
+        ```bash
+        UCX_TLS=rc,sm
+        ```
+    *   For *larger-scale jobs*:
+        ```bash
+        UCX_TLS=dc,sm UCX_MAX_RNDV_RAILS=1
+        ```
+
+*   Disable multi-rail for multi-node jobs
+    ```bash
+    export UCX_MAX_RNDV_RAILS=1
+    ```
+
+*   Use the latest stable versions
+    *   UCX: **1.14.0 rc4** (as of September 2025)
+    *   HPC-X MPI: **hpcx-v2.18-gcc-mlnx\_ofed-redhat8-cuda12-x86\_64** (as of September 2025)
+
+## Best Practices for running MPI Jobs on HBv5
+
+*   Apply the *hpc-compute* tuned profile. Optimized for HPC workloads:
+    ```bash
+    sudo dnf install -y tuned
+    sudo systemctl enable --now tuned
+    sudo tuned-adm profile hpc-compute
+    ```
+*   Enable Transparent Huge Pages (THP). Improves memory efficiency for large allocations:
+    ```bash
+    echo madvise | sudo tee /sys/kernel/mm/transparent_hugepage/enabled
+    echo madvise | sudo tee /sys/kernel/mm/transparent_hugepage/defrag
+    ```
+*   Enable NUMA balancing. Ensures better memory locality:
+    ```bash
+    echo 1 | sudo tee /proc/sys/kernel/numa_balancing
+    ```
+*   Drop caches before running jobs. Reduces variability and improves consistency:
+    ```bash
+    echo 3 | sudo tee /proc/sys/vm/drop_caches
+    ```
+*   Use HPCX MPI library. On Azure HPC-optimized images:
+    ```bash
+    module load mpi/hpcx
+    ```
+*   MPI process placement and core affinity
+    *   Pin MPI processes to physical cores
+    *   Avoid oversubscription
+    *   Use symmetric rank distribution per CCD (1–7 ranks per CCD)
+        *   Each HBv5 VM has **48 CCDs**, so supported configurations include:  
+            `48, 96, 144, 192, 288, 336 ranks per VM`
+    *   Example command:
+        ```bash
+        mpirun -np <number_of_ranks> \
+          --map-by ppr:<ranks_per_CCD>:l3cache \
+          --rank-by slot \
+          --bind-to core \
+          <other_options> <executable> <arguments>
+        ```
+
+> [!NOTE]
+> Optimal configuration depends on workload. Symmetric rank distribution usually performs best, but some workloads may benefit from using all **368 cores per VM**. Benchmark multiple configurations to determine the best setting.  
+*(Topology reference: 16 NUMA regions, 48 CCDs per VM.)*
 
 ## Temporary storage
 HBv5 VMs feature 9 physically local NVMe SSD devices. One device is preformatted to serve as a page file and will appear within your VM as a generic *SSD* device. 8 other, larger SSDs are provided as unformatted block NVMe devices. 

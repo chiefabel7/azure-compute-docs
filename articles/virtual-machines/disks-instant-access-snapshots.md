@@ -28,7 +28,6 @@ Disks created from snapshots of these disk types can be immediately attached to 
 ### Limitations
 
 - You can't use the `CompletionPercent` property to gauge the progress of the background data copy for snapshots created from Premium SSD, Standard SSD, and Standard HDD disks, or the disk hydration process from snapshots. It always reports 100%, even while copy is in progress.
-- Premium SSD, Standard SSD, and Standard HDD disks created from snapshots will experience temporary performance degradation until the background copy completes. To reduce latency, use Premium Storage snapshots.
 
 ## Snapshots of Ultra Disks and Premium SSD v2
 

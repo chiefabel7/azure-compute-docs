@@ -12,11 +12,11 @@ ms.custom: references_regions
 
 # Instant access snapshot 
 
-Azure Managed Disk Snapshots provide point-in-time backups of disks that can be used as backup during software upgrades, disaster recovery, or to create new environments. When creating snapshots from Azure Managed Disks, Azure automatically copies the data from the disk to the snapshot in the background. When you take a snapshot of a disk, by default, most managed disks create snapshots that have an instant access capability (instant access snapshots).
+Azure Managed Disk Snapshots provide point-in-time backups of disks that can be used as backup during software upgrades, disaster recovery, or to create new environments. When creating snapshots from Azure Managed Disks, Azure automatically copies the data from the disk to the snapshot in the background. Most managed disks snapshots are instant access by default.
 
 Snapshots of Premium SSD, Standard SSD, and Standard HDD disks are by default instant access snapshots. Immediately upon creation, these snapshots can be used to restore new disks, download underlying data, and copy to other Azure regions. 
 
-By default, snapshots of Ultra Disks and Premium SSD v2 aren't an instant access snapshot and require the background data copy to complete before they can be used. Instant access snapshots of these disks are available as a preview, and you must explicitly opt to create an instant access snapshot when creating a snapshot of these disks.
+By default, snapshots of Ultra Disks and Premium SSD v2 aren't instant access and require the background data copy to complete before they can be used. Instant access snapshots of these disks are available as a preview, and you must explicitly opt to create an instant access snapshot when creating a snapshot of these disks.
 
 
 ## Snapshots of Premium SSD, Standard SSD, and Standard HDD disks
@@ -52,6 +52,8 @@ After the time specified in `InstantAccessDurationMins` elapses, or five hours h
 - Attaching Ultra Disks and Premium SSD v2 across fault domains (using either a VM in an availability set or a Virtual Machine Scale Set) triggers the background data copy and prevents you from creating an instant access snapshot during the copy. 
 - Ultra Disks and Premium SSD v2 that have active instant access snapshots can't be attached across fault domains
 - To use Instant Access with Ultra Disks, the snapshot must be created from a newly provisioned Ultra Disks.
+- You cannot create instant access snapshot from Azure Portal.
+- Differences between snapshots created using Instant Access cannot be retrieved. 
 
 ### Regional availability
 

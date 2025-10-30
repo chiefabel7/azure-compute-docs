@@ -5,7 +5,7 @@ services: virtual-machines
 ms.service: azure-virtual-machines
 ms.subservice: hpc
 ms.topic: concept-article
-ms.date: 10/28/2025
+ms.date: 11/05/2025
 ms.reviewer: cynthn
 ms.author: padmalathas
 author: padmalathas
@@ -139,26 +139,26 @@ HBv5 VMs support Adaptive Routing, Dynamic Connected Transport (DCT, in addition
 
 ## Best Practices for running MPI Jobs on HBv5
 
-*   Apply the *hpc-compute* tuned profile. Optimized for HPC workloads:
+*   Apply the *hpc-compute* tuned profile which are optimized for HPC workloads:
     ```bash
     sudo dnf install -y tuned
     sudo systemctl enable --now tuned
     sudo tuned-adm profile hpc-compute
     ```
-*   Enable Transparent Huge Pages (THP). Improves memory efficiency for large allocations:
+*   Enable Transparent Huge Pages (THP) to improve memory efficiency for large allocations:
     ```bash
     echo madvise | sudo tee /sys/kernel/mm/transparent_hugepage/enabled
     echo madvise | sudo tee /sys/kernel/mm/transparent_hugepage/defrag
     ```
-*   Enable NUMA balancing. Ensures better memory locality:
+*   Enable NUMA balancing for better memory locality:
     ```bash
     echo 1 | sudo tee /proc/sys/kernel/numa_balancing
     ```
-*   Drop caches before running jobs. Reduces variability and improves consistency:
+*   Drop caches before running jobs as this reduces variability and improves consistency:
     ```bash
     echo 3 | sudo tee /proc/sys/vm/drop_caches
     ```
-*   Use HPCX MPI library. On Azure HPC-optimized images:
+*   Use HPCX MPI library on Azure HPC-optimized images:
     ```bash
     module load mpi/hpcx
     ```
@@ -176,10 +176,14 @@ HBv5 VMs support Adaptive Routing, Dynamic Connected Transport (DCT, in addition
           --bind-to core \
           <other_options> <executable> <arguments>
         ```
-
 > [!NOTE]
 > Optimal configuration depends on workload. Symmetric rank distribution usually performs best, but some workloads may benefit from using all **368 cores per VM**. Benchmark multiple configurations to determine the best setting.  
 *(Topology reference: 16 NUMA regions, 48 CCDs per VM.)*
+
+*   For multi VM jobs at scale, disable multi rail in UCX, using:
+    ```bash
+    export UCX_MAX_RNDV_RAILS=1
+    ```
 
 ## Temporary storage
 HBv5 VMs feature 9 physically local NVMe SSD devices. One device is preformatted to serve as a page file and will appear within your VM as a generic *SSD* device. 8 other, larger SSDs are provided as unformatted block NVMe devices. 

@@ -27,7 +27,7 @@ Performance expectations using common HPC microbenchmarks are as follows:
 
 ## Process pinning
 
-[Process pinning](./workloads/hpc/compiling-scaling-applications.md#process-pinning) works well on HBv5-series and HX-series VMs because we expose the underlying silicon as-is to the guest VM. We strongly recommend process pinning for optimal performance and consistency.
+[Process pinning](./workloads/hpc/compiling-scaling-applications.md#process-pinning) works well on HBv5-series VMs because we expose the underlying silicon as-is to the guest VM. We strongly recommend process pinning for optimal performance and consistency.
 
 ## STREAM Memory bandwidth test 
 
@@ -57,6 +57,9 @@ module load mpi/hpcx
 mpirun -np 2 --host $src,$dst --map-by node -x LD_LIBRARY_PATH $HPCX_OSU_DIR/osu_latency
 ```
 
+> [!NOTE]
+> Define source(src) and destination(dst).
+
 ## MPI bandwidth
 
 The MPI bandwidth test from the OSU microbenchmark suite can be executed per below. Sample scripts are on [GitHub](https://github.com/Azure/azurehpc/tree/master/apps/health_checks).
@@ -65,11 +68,8 @@ The MPI bandwidth test from the OSU microbenchmark suite can be executed per bel
 module load mpi/hpcx 
 mpirun -np 2 --host $src,$dst --map-by node -x LD_LIBRARY_PATH $HPCX_OSU_DIR/osu_bw
 ```
-[!NOTE]
-Define source(src) and destination(dst).
 
 ## Next steps
 - Learn about [scaling MPI applications](./workloads/hpc/compiling-scaling-applications.md).
-- Review the performance and scalability results of HPC applications on the HBv5 VMs at the [TechCommunity article](https://techcommunity.microsoft.com/t5/azure-compute/hpc-performance-and-scalability-results-with-azure-HBv5-vms/bc-p/2235843).
 - Read about the latest announcements, HPC workload examples, and performance results at the [Azure HPC Microsoft Community Hub](https://techcommunity.microsoft.com/t5/azure-high-performance-computing/bg-p/AzureHighPerformanceComputingBlog).
 - For a higher-level architectural view of running HPC workloads, see [High Performance Computing (HPC) on Azure](/azure/architecture/topics/high-performance-computing/).

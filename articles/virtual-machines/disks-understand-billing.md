@@ -29,15 +29,15 @@ The price of an Azure Ultra Disk is determined by the combination of how large t
 
 ### Ultra Disk size
 
-Ultra Disk capacities range from 1 GiB to 64 TiBs, in 1-GiB increments. You're billed on a per GiB ratio.
+Ultra Disk capacities range from 4 GiB to 64 TiBs, in 1-GiB increments. You're billed on a per GiB ratio.
 
 ### Ultra Disk IOPS
 
-Pricing of an Azure Ultra Disk increases as you provision more IOPS to your disk. Ultra Disks supports 1000 IOPS/GiB, up to a maximum of 400,000 IOPS per disk. Increasing your IOPS increases the price of your disk.
+Pricing of an Azure Ultra Disk increases as you provision more IOPS to your disk. Ultra Disks supports 1000 IOPS/GiB, up to a maximum of 400,000 IOPS per disk.
 
 ### Ultra Disk throughput
 
-The maximum throughput limit of an Ultra Disk is .25 MB/s for each provisioned IOPS, up to a maximum of 10,000 MB/s per disk (where MB/s = 10^6 Bytes per second). The minimum guaranteed throughput of an Ultra Disk is 1 MB/s. The pricing of an Ultra Disk increases as you increase the disk's throughput limit.
+Pricing of an Ultra Disk increases as you increase the disk's throughput limit. Ultra Disk supports .25 MB/s for each provisioned IOPS, up to a maximum of 10,000 MB/s per disk (where MB/s = 10^6 Bytes per second). The minimum guaranteed throughput of an Ultra Disk is 1 MB/s. 
 
 ### Shared Ultra Disks
 

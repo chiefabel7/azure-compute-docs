@@ -37,7 +37,7 @@ The following diagram shows the topology of the server. We reserve these 16 hype
 
 ![Screenshot of HBv5-series server Topology](./media/hpc/architecture/hbv5/hbv5-topology-server.png)
 
-The CCD boundary is different from a NUMA boundary. On HBv5, a group of six (6) consecutive CCDs is configured as a NUMA domain, both at the host server level and within a guest VM. Thus, all HBv5 VM sizes expose four uniform NUMA domains that appear to an OS and application as shown below, each with different number of cores depending on the specific [HBv5 VM size](./sizes/high-performance-compute/hbv5-series.md).
+The CCD boundary is different from a NUMA boundary. On HBv5, a group of six (6) consecutive CCDs is configured as a NUMA domain, both at the host server level and within a guest VM. Thus, all HBv5 VM sizes expose four uniform NUMA domains that appear to an OS and application as shown beneath, each with different number of cores depending on the specific [HBv5 VM size](./sizes/high-performance-compute/hbv5-series.md).
 
 Each HBv5 VM size is similar in physical layout, features, and performance of a different CPU from the AMD EPYC 9V33X, as follows:
 
@@ -53,8 +53,8 @@ Standard_HB368-96rs_v5            | 16           | 6                      | Dual
 Standard_HB368-48rs_v5            | 16           | 3                      | Dual-socket EPYC 9V33X           |
 
 > [!NOTE]
-> * The constrained cores VM sizes only reduce the number of physical cores exposed to the VM. All global shared assets (RAM, memory bandwidth, L3 cache, GMI and xGMI connectivity, InfiniBand, Azure Ethernet network, local SSD) stay constant with the parent VM size. This allows a customer to pick a VM size best tailored to a given set of workload or software licensing needs.
-> * Four CPU cores/CCD are needed to saturate memory bandwidth. This means the Standard_HB368-144rs_v5, Standard_HB368-96rs_v5, and Standard_HB368-48rs_v5 VM sizes can't utilize the full memory bandwidth of the server. 
+> * The constrained cores VM sizes only reduce the number of physical cores exposed to the VM. All global shared assets (RAM, memory bandwidth, L3 cache, GMI and xGMI connectivity, InfiniBand, Azure Ethernet network, local SSD) stay constant with the parent VM size. It allows the customer to pick a VM size best tailored to a given set of workload or software licensing needs.
+> * Four CPU cores/CCD are needed to saturate memory bandwidth. This requirement means those Standard_HB368-144rs_v5, Standard_HB368-96rs_v5, and Standard_HB368-48rs_v5 VM sizes can't achieve full memory bandwidth of the server. 
 
 The virtual NUMA mapping of each HBv5 VM size is mapped to the underlying physical NUMA topology. There's no potential misleading abstraction of the hardware topology. 
 
@@ -139,7 +139,7 @@ HBv5 VMs support Adaptive Routing, Dynamic Connected Transport (DCT, in addition
 
 ## Best Practices for running MPI Jobs on HBv5
 
-*   Apply the *hpc-compute* tuned profile, which are optimized for HPC workloads:
+*   Apply the *hpc-compute* tuned profile, which is optimized for HPC workloads:
     ```bash
     sudo dnf install -y tuned
     sudo systemctl enable --now tuned
@@ -214,12 +214,12 @@ Combined, the 8 NVMe devices provide 15 TiB of total local storage per VM.
 | Additional Frameworks          | UCX, libfabric, PGAS, or other InfiniBand based runtimes                  |
 | Azure Storage Support          | Standard and Premium Disks (maximum 32 disks), Azure NetApp Files, Azure Files, Azure HPC Cache, Azure Managed Lustre File System (Preview)             |
 | Supported and Validated OS     | AlmaLinux 8.10, Red Hat Enterprise Linux 8.10, Ubuntu 22.04+ and 24.04            |
-| Recommended OS for Performance | AlmaLinux HPC 8.10 (recommended image URN: almalinux:almalinux-hpc:8_10-hpc-gen2:latest), for scaling tests, use the URN recommended almalinux:almalinux-hpc:8_6-hpc-gen2:latest and the new HPC-X [tarball](https://github.com/Azure/azhpc-images/releases/tag/alma-hpc-20250529), Ubuntu-HPC 18.04+    |
+| Recommended OS for Performance | AlmaLinux HPC 8.10 (recommended image URN: almalinux:almalinux-hpc:8_10-hpc-gen2:latest), for scaling test, use the URN recommended almalinux:almalinux-hpc:8_6-hpc-gen2:latest and the new HPC-X [tarball](https://github.com/Azure/azhpc-images/releases/tag/alma-hpc-20250529), Ubuntu-HPC 18.04+    |
 | Orchestrator Support           | Azure CycleCloud, AKS; [cluster configuration options](sizes-hpc.md#cluster-configuration-options)                      | 
 
 > [!NOTE]
 > * These VMs support only Generation 2 VMs. Generation 1 VMs are unsupported.
-> * All Red Hat Enterprise Linux (RHEL) versions prior to 8.10 (including RHEL derivatives such as CentOS and AlmaLinux) are unsupported.
+> * All Red Hat Enterprise Linux (RHEL) versions earlier than 8.10, including derivatives such as CentOS and AlmaLinux, are deprecated.
 > * Windows Server isn't supported on HBv5 and hasn't been tested. We're exploring support for Windows Server 2025 later in the Preview. Customers are free to try running Windows Server on HBv5 VMs as long as they understand this scenario is untested and unsupported. For more information, see [Supported Windows guest operating systems for Hyper-V on Windows Server](/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows).
 > * Read 'list of known issues' section for workaround.
 > * Currently HBv5, doesn't support Azure Batch and Azure Kubernetes Service. Azure will add support when HBv5 VMs reach General Availability.

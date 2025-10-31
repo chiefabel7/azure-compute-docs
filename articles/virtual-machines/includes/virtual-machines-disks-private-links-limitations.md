@@ -11,6 +11,6 @@
 # Customer intent: "As a cloud engineer, I want to understand the limitations of disk and snapshot import/export operations, so that I can effectively manage disk access and encryption settings within my virtual machine environment."
 ---
 
-- You can't import or export more than five disks or snapshots at the same time with the same disk access object.
+- You can't import or export more than 100 disks or snapshots at the same time with the same disk access object.
 - You can't upload to a disk with both a disk access object and a disk encryption set.
 

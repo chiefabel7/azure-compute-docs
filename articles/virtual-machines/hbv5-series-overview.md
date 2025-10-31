@@ -54,7 +54,7 @@ Standard_HB368-48rs_v5            | 16           | 3                      | Dual
 
 > [!NOTE]
 > * The constrained cores VM sizes only reduce the number of physical cores exposed to the VM. All global shared assets (RAM, memory bandwidth, L3 cache, GMI and xGMI connectivity, InfiniBand, Azure Ethernet network, local SSD) stay constant with the parent VM size. This allows a customer to pick a VM size best tailored to a given set of workload or software licensing needs.
-> * Four CPU cores/CCD are needed to saturate memory bandwidth. This means the Standard_HB368-144rs_v5, Standard_HB368-96rs_v5, and Standard_HB368-48rs_v5 VM sizes cannot utilize the full memory bandwidth of the server. 
+> * Four CPU cores/CCD are needed to saturate memory bandwidth. This means the Standard_HB368-144rs_v5, Standard_HB368-96rs_v5, and Standard_HB368-48rs_v5 VM sizes can't utilize the full memory bandwidth of the server. 
 
 The virtual NUMA mapping of each HBv5 VM size is mapped to the underlying physical NUMA topology. There's no potential misleading abstraction of the hardware topology. 
 
@@ -111,11 +111,11 @@ HBv5 VMs also feature 4 NVIDIA Quantum-2 CX7 InfiniBand (NDR) adapters each oper
 
 HBv5 VMs support Adaptive Routing, Dynamic Connected Transport (DCT, in addition to the standard RC and UD transports), and hardware-based offload of MPI collectives to the onboard processor of the ConnectX-7 adapter. These features enhance application performance, scalability, and consistency, and usage of them is recommended.
 
-# Best practices for InfiniBand configuration
+## Best practices for InfiniBand configuration
 
 *   Use a validated VM image. Choose an image with tested drivers and NDR InfiniBand-ready software:
     *   **Recommended**: AlmaLinux 8.10 from the AlmaLinux HPC shared image gallery  
-        *Access can be provided by the Azure HPC team; this image is built using Azure HPC VM Image scripts.*
+        *The Azure HPC team provides access to AlmaLinux 8.10 from the AlmaLinux HPC shared image gallery, and this image is built using Azure HPC VM Image scripts.*
     *   **Also supported**: Azure HPC marketplace images (Ubuntu-HPC 18.04, Ubuntu-HPC 20.04)
 
 *   Select the optimal InfiniBand transport protocol
@@ -139,7 +139,7 @@ HBv5 VMs support Adaptive Routing, Dynamic Connected Transport (DCT, in addition
 
 ## Best Practices for running MPI Jobs on HBv5
 
-*   Apply the *hpc-compute* tuned profile which are optimized for HPC workloads:
+*   Apply the *hpc-compute* tuned profile, which are optimized for HPC workloads:
     ```bash
     sudo dnf install -y tuned
     sudo systemctl enable --now tuned
@@ -186,9 +186,9 @@ HBv5 VMs support Adaptive Routing, Dynamic Connected Transport (DCT, in addition
     ```
 
 ## Temporary storage
-HBv5 VMs feature 9 physically local NVMe SSD devices. One device is preformatted to serve as a page file and will appear within your VM as a generic *SSD* device. 8 other, larger SSDs are provided as unformatted block NVMe devices. 
+HBv5 VMs feature 9 physically local NVMe SSD devices. One device is preformatted to serve as a page file and appears in your VM as a generic *SSD* device. 8 other, larger SSDs are provided as unformatted block NVMe devices. 
 
-As the block NVMe device bypasses the hypervisor, it'll have higher bandwidth, higher IOPS, and lower latency per IOP. When paired in a striped array, the NVMe SSD is expected to provide up to 50 GB/s of read bandwidth and 30 GB/s of write bandwidth for large block sizes. 
+As the block NVMe device bypasses the hypervisor, it has higher bandwidth, higher IOPS, and lower latency per IOP. When paired in a striped array, the NVMe SSD is expected to provide up to 50 GB/s of read bandwidth and 30 GB/s of write bandwidth for large block sizes. 
 
 Combined, the 8 NVMe devices provide 15 TiB of total local storage per VM.
 
@@ -214,15 +214,15 @@ Combined, the 8 NVMe devices provide 15 TiB of total local storage per VM.
 | Additional Frameworks          | UCX, libfabric, PGAS, or other InfiniBand based runtimes                  |
 | Azure Storage Support          | Standard and Premium Disks (maximum 32 disks), Azure NetApp Files, Azure Files, Azure HPC Cache, Azure Managed Lustre File System (Preview)             |
 | Supported and Validated OS     | AlmaLinux 8.10, Red Hat Enterprise Linux 8.10, Ubuntu 22.04+ and 24.04            |
-| Recommended OS for Performance | AlmaLinux HPC 8.10 (recommended image URN : almalinux:almalinux-hpc:8_10-hpc-gen2:latest), for scaling tests please use the URN recommended almalinux:almalinux-hpc:8_6-hpc-gen2:latest and the new HPC-X [tarball](https://github.com/Azure/azhpc-images/releases/tag/alma-hpc-20250529), Ubuntu-HPC 18.04+    |
+| Recommended OS for Performance | AlmaLinux HPC 8.10 (recommended image URN: almalinux:almalinux-hpc:8_10-hpc-gen2:latest), for scaling tests, use the URN recommended almalinux:almalinux-hpc:8_6-hpc-gen2:latest and the new HPC-X [tarball](https://github.com/Azure/azhpc-images/releases/tag/alma-hpc-20250529), Ubuntu-HPC 18.04+    |
 | Orchestrator Support           | Azure CycleCloud, AKS; [cluster configuration options](sizes-hpc.md#cluster-configuration-options)                      | 
 
 > [!NOTE]
 > * These VMs support only Generation 2 VMs. Generation 1 VMs are unsupported.
 > * All Red Hat Enterprise Linux (RHEL) versions prior to 8.10 (including RHEL derivatives such as CentOS and AlmaLinux) are unsupported.
-> * Windows Server isn't supported on HBv5 and has not been tested. We are exploring support for Windows Server 2025 later in the Preview. Customers are free to try running Windows Server on HBv5 VMs as long as they understand this scenario is untested and unsupported. For more information, see [Supported Windows guest operating systems for Hyper-V on Windows Server](/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows).
-> * Please read 'list of known issues' section for workaround.
-> * Currently HBv5, doesn't support Azure Batch and Azure Kubernetes Service. Support is expected to be added when HBv5 VMs graduate to General Availability.
+> * Windows Server isn't supported on HBv5 and hasn't been tested. We're exploring support for Windows Server 2025 later in the Preview. Customers are free to try running Windows Server on HBv5 VMs as long as they understand this scenario is untested and unsupported. For more information, see [Supported Windows guest operating systems for Hyper-V on Windows Server](/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows).
+> * Read 'list of known issues' section for workaround.
+> * Currently HBv5, doesn't support Azure Batch and Azure Kubernetes Service. Azure will add support when HBv5 VMs reach General Availability.
 
 > [!NOTE] 
 > * These VMs support only Generation 2.
@@ -230,11 +230,11 @@ Combined, the 8 NVMe devices provide 15 TiB of total local storage per VM.
 > * Windows Server 2012 R2 isn't supported on HBv5 and other VMs with more than 64 (virtual or physical) cores. For more information, see [Supported Windows guest operating systems for Hyper-V on Windows Server](/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows). Windows Server 2022 is required for 144 and 176 core sizes, Windows Server 2016 also works for 24, 48, and 96 core sizes, Windows Server works for only 24 and 48 core sizes.  
 
 > [!IMPORTANT] 
-> Recommended image URN: almalinux:almalinux-hpc:8_7-hpc-gen2:8.7.2023060101, To deploy this image over Azure CLI, ensure the following parameters are included **--plan 8_7-hpc-gen2 --product almalinux-hpc --publisher almalinux**. For scaling tests please use the recommended URN along with the new [HPC-X tarball](https://github.com/Azure/azhpc-images/blob/c8db6de3328a691812e58ff56acb5c0661c4d488/alma/alma-8.x/alma-8.6-hpc/install_mpis.sh#L16).
+> Recommended image URN: almalinux:almalinux-hpc:8_7-hpc-gen2:8.7.2023060101, To deploy this image over Azure CLI, ensure the following parameters are included **--plan 8_7-hpc-gen2 --product almalinux-hpc --publisher almalinux**. For scaling tests, use the recommended URN along with the new [HPC-X tarball](https://github.com/Azure/azhpc-images/blob/c8db6de3328a691812e58ff56acb5c0661c4d488/alma/alma-8.x/alma-8.6-hpc/install_mpis.sh#L16).
 
 > [!NOTE]
-> * NDR support is added in UCX 1.13 or later. Older UCX versions will report the above runtime error. UCX Error: Invalid active speed `[1677010492.951559] [updsb-vm-0:2754 :0]       ib_iface.c:1549 UCX ERROR Invalid active_speed on mlx5_ib0:1: 128`.
-> * Ibstat shows low speed (SDR): Older Mellanox OFED (MOFED) versions don't support NDR and it may report slower IB speeds. Use MOFED versions MOFED 5.6-1.0.3.3 or above.
+> * NDR support is added in UCX 1.13 or later. Older UCX versions report the above runtime error. UCX Error: Invalid active speed `[1677010492.951559] [updsb-vm-0:2754 :0]       ib_iface.c:1549 UCX ERROR Invalid active_speed on mlx5_ib0:1: 128`.
+> * Ibstat shows low speed (SDR): Older Mellanox OFED (MOFED) versions don't support NDR and it may report slower IB speeds. Use MOFED versions MOFED 5.6-1.0.3.3 or later.
 
 ## Next steps
 

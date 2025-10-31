@@ -97,13 +97,13 @@ lstopo-no-graphics --no-io --no-legend --of txt
 <details>
 <summary>Select to view lstopo output for Standard_HB368-96rs_v5</summary>
 
-![lstopo output for HBv5-96 VM](./media/hpc/architecture/hbv5/hbv5-96-lstopo.png)
+:::image type="content" source="./media/hpc/architecture/hbv5/hbv5-96-lstopo.png" alt-text="lstopo output for HBv5-96 VM." lightbox="./media/hpc/architecture/hbv5/hbv5-96-lstopo.png":::
 </details>
 
 <details>
 <summary>Select to view lstopo output for Standard_HB368-48rs_v5</summary>
 
-![lstopo output for HBv5-48 VM](./media/hpc/architecture/hbv5/hbv5-48-lstopo.png)
+:::image type="content" source="./media/hpc/architecture/hbv5/hbv5-48-lstopo.png" alt-text="lstopo output for HBv5-48 VM." lightbox="./media/hpc/architecture/hbv5/hbv5-48-lstopo.png":::
 </details>
 
 ## InfiniBand networking
@@ -194,15 +194,15 @@ Combined, the 8 NVMe devices provide 15 TiB of total local storage per VM.
 
 ## Hardware specifications 
 
-| Hardware specifications          | HBv5-series VMs              |
-|----------------------------------|----------------------------------|
-| Cores                            | 368, 336, 288, 240, 192, 144, 96, 48 (SMT disabled)           | 
+| Hardware specifications          | HBv5-series VMs                                     |
+|----------------------------------|--------------------------------------------------   |
+| Cores                            | 368, 336, 288, 240, 192, 144, 96, 48 (SMT disabled) | 
 | CPU                              | AMD EPYC 9004-series (EPYC 9V64H)                   | 
-| CPU Frequency (non-AVX)          | 3.5 GHz base, 4 GHz peak boost(FMAX)    | 
-| Memory                           | 441 GB (RAM per core depends on VM size)         | 
-| Local Disk                       | 8 * 1.8 TB NVMe (block), 480 GB SSD (page file) | 
-| InfiniBand                       | 4 * 200 Gb/s NVIDIA ConnectX-7 NDR InfiniBand | 
-| Network                          | 180 Gb/s Azure Accelerated Networking | 
+| CPU Frequency (non-AVX)          | 3.5 GHz base, 4 GHz peak boost(FMAX)                | 
+| Memory                           | 441 GB (RAM per core depends on VM size)            | 
+| Local Disk                       | 8 * 1.8 TB NVMe (block), 480 GB SSD (page file)     | 
+| InfiniBand                       | 4 * 200 Gb/s NVIDIA ConnectX-7 NDR InfiniBand       | 
+| Network                          | 180 Gb/s Azure Accelerated Networking               | 
 
 
 ## Software specifications 
@@ -220,7 +220,7 @@ Combined, the 8 NVMe devices provide 15 TiB of total local storage per VM.
 > [!NOTE]
 > * These VMs support only Generation 2 VMs. 
 > * All Red Hat Enterprise Linux (RHEL) versions earlier than 8.10, including derivatives such as CentOS and AlmaLinux, are deprecated.
-> * Windows Server isn't supported on HBv5 and hasn't tested at this time. Customers are free to try running Windows Server on HBv5 VMs as long as they understand this scenario is untested and unsupported. For more information, see [Supported Windows guest operating systems for Hyper-V on Windows Server](/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows).
+> * Windows Server isn't supported on HBv5.
 
 ## Known Issues with IB RDMA and NUMA Node Affinity
 

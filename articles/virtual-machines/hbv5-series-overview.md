@@ -16,7 +16,7 @@ author: padmalathas
 
 **Applies to:** :heavy_check_mark: Linux VMs :heavy_check_mark: Windows VMs :heavy_check_mark: Flexible scale sets :heavy_check_mark: Uniform scale sets
 
-An [HBv5-series](./sizes/high-performance-compute/hbv5-series.md) server features 4 * 96-core EPYC 9V33X CPUs for a total of 384 physical "Zen4" cores with AMD 3D-V Cache. Simultaneous Multithreading (SMT) is disabled on HBv5. These 384 cores are divided into 48 Core Chiplet Dies (CCDs) sections (12 per socket), and each CCD containing eight processor cores with uniform access to a 32 MB L3 cache. Azure HBv5 servers also run the following AMD BIOS settings: 
+An [HBv5-series](./sizes/high-performance-compute/hbv5-series.md) server features 4 * 96-core AMD EPYC 9V33X CPUs for a total of 384 physical "Zen4" cores with Simultaneous Multithreading (SMT) disabled. These 384 cores are divided into 48 Core Chiplet Dies (CCDs) sections (12 per socket), and each CCD containing eight processor cores with uniform access to a 32 MB L3 cache. Azure HBv5 servers also run the following AMD BIOS settings: 
 
 ```bash
 Nodes per Socket (NPS) = 4
@@ -41,16 +41,16 @@ The CCD boundary is different from a NUMA boundary. On HBv5, a group of six (6) 
 
 Each HBv5 VM size is similar in physical layout, features, and performance of a different CPU from the AMD EPYC 9V33X, as follows:
 
-| HBv5-series VM size             | NUMA domains | Cores per NUMA domain  | Similarity with AMD EPYC         |
-|---------------------------------|--------------|------------------------|----------------------------------|
-Standard_HB368rs_v5               | 16           | 23                     | Dual-socket EPYC 9V33X           |
-Standard_HB368-336rs_v5           | 16           | 21                     | Dual-socket EPYC 9V33X           |
-Standard_HB368-288rs_v5           | 16           | 18                     | Dual-socket EPYC 9V33X           |
-Standard_HB368-240rs_v5           | 16           | 15                     | Dual-socket EPYC 9V33X           |
-Standard_HB368-192rs_v5           | 16           | 12                     | Dual-socket EPYC 9V33X           |
-Standard_HB368-144rs_v5           | 16           | 9                      | Dual-socket EPYC 9V33X           |
-Standard_HB368-96rs_v5            | 16           | 6                      | Dual-socket EPYC 9V33X           |
-Standard_HB368-48rs_v5            | 16           | 3                      | Dual-socket EPYC 9V33X           |
+| HBv5-series VM size             | NUMA domains | Cores per NUMA domain  | 
+|---------------------------------|--------------|------------------------|
+Standard_HB368rs_v5               | 16           | 23                     | 
+Standard_HB368-336rs_v5           | 16           | 21                     | 
+Standard_HB368-288rs_v5           | 16           | 18                     | 
+Standard_HB368-240rs_v5           | 16           | 15                     | 
+Standard_HB368-192rs_v5           | 16           | 12                     | 
+Standard_HB368-144rs_v5           | 16           | 9                      | 
+Standard_HB368-96rs_v5            | 16           | 6                      |
+Standard_HB368-48rs_v5            | 16           | 3                      |
 
 > [!NOTE]
 > * The constrained cores VM sizes only reduce the number of physical cores exposed to the VM. All global shared assets (RAM, memory bandwidth, L3 cache, GMI and xGMI connectivity, InfiniBand, Azure Ethernet network, local SSD) stay constant with the parent VM size. It allows the customer to pick a VM size best tailored to a given set of workload or software licensing needs.
@@ -218,23 +218,60 @@ Combined, the 8 NVMe devices provide 15 TiB of total local storage per VM.
 | Orchestrator Support           | Azure CycleCloud, AKS; [cluster configuration options](sizes-hpc.md#cluster-configuration-options)                      | 
 
 > [!NOTE]
-> * These VMs support only Generation 2 VMs. Generation 1 VMs are unsupported.
+> * These VMs support only Generation 2 VMs. 
 > * All Red Hat Enterprise Linux (RHEL) versions earlier than 8.10, including derivatives such as CentOS and AlmaLinux, are deprecated.
-> * Windows Server isn't supported on HBv5 and wasn't tested. We're exploring support for Windows Server 2025 later in the Preview. Customers are free to try running Windows Server on HBv5 VMs as long as they understand this scenario is untested and unsupported. For more information, see [Supported Windows guest operating systems for Hyper-V on Windows Server](/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows).
-> * Read 'list of known issues' section for workaround.
-> * Currently HBv5, doesn't support Azure Batch and Azure Kubernetes Service. Azure adds support when HBv5 VMs reach General Availability.
+> * Windows Server isn't supported on HBv5 and hasn't tested at this time. Customers are free to try running Windows Server on HBv5 VMs as long as they understand this scenario is untested and unsupported. For more information, see [Supported Windows guest operating systems for Hyper-V on Windows Server](/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows).
 
-> [!NOTE] 
-> * These VMs support only Generation 2.
-> * Official kernel-level support from AMD starts with RHEL 8.6 and AlmaLinux 8.6, which is a derivative of RHEL.
-> * Windows Server 2012 R2 isn't supported on HBv5 and other VMs with more than 64 (virtual or physical) cores. For more information, see [Supported Windows guest operating systems for Hyper-V on Windows Server](/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows). Windows Server 2022 is required for 144 and 176 core sizes, Windows Server 2016 also works for 24, 48, and 96 core sizes, Windows Server works for only 24 and 48 core sizes.  
+## Known Issues with IB RDMA and NUMA Node Affinity
 
-> [!IMPORTANT] 
-> Recommended image URN: almalinux:almalinux-hpc:8_7-hpc-gen2:8.7.2023060101, To deploy this image over Azure CLI, ensure the following parameters are included **--plan 8_7-hpc-gen2 --product almalinux-hpc --publisher almalinux**. For scaling tests, use the recommended URN along with the new [HPC-X tarball](https://github.com/Azure/azhpc-images/blob/c8db6de3328a691812e58ff56acb5c0661c4d488/alma/alma-8.x/alma-8.6-hpc/install_mpis.sh#L16).
+### Issue Overview
 
-> [!NOTE]
-> * NDR support is added in UCX 1.13 or later. Older UCX versions report the referenced runtime error. UCX Error: Invalid active speed `[1677010492.951559] [updsb-vm-0:2754 :0]       ib_iface.c:1549 UCX ERROR Invalid active_speed on mlx5_ib0:1: 128`.
-> * Ibstat shows low speed (SDR): Older Mellanox OFED (MOFED) versions don't support NDR and it can report slower IB speeds. Use MOFED versions MOFED 5.6-1.0.3.3 or later.
+On certain virtual machines (VMs), the InfiniBand RDMA device names (such as mlx5_[0-3]) may not align correctly with their respective NUMA node affinities. Ideally, each RDMA device should be mapped as follows:
+
+-	mlx5_0 is on NUMA node: 0
+-	mlx5_1 is on NUMA node: 4
+-	mlx5_2 is on NUMA node: 8
+-	mlx5_3 is on NUMA node: 12
+  
+However, an incorrect mapping example could be:
+
+- mlx5_0 is on NUMA node: 4
+- mlx5_1 is on NUMA node: 8
+- mlx5_2 is on NUMA node: 12
+- mlx5_3 is on NUMA node: 0
+  
+This misalignment can lead to performance degradation, particularly when running multimode MPI workloads.
+
+### Verifying RDMA device to NUMA node mapping
+
+To confirm whether your RDMA devices are correctly mapped to NUMA nodes, execute the following script:
+```bash
+for d in /sys/class/infiniband/*;
+do
+dev=$(basename "$d")
+node=$(cat "$d/device/numa_node")
+echo "$dev is on NUMA node: $node"
+done
+```
+Compare the output with the ideal mapping listed above.
+
+### Solution: Persistent device naming with Udev rules
+
+To remediate the misalignment issue, follow these steps:
+1.	Create a new file in /etc/udev/rules.d/, for example: 99-rdma-persistent-naming.rules
+2.	Add the following lines to the file:
+    ```bash
+    ACTION=="add", SUBSYSTEMS=="pci", KERNELS=="0101:00:00.0", PROGRAM="rdma_rename %k NAME_FIXED mlx5_ib0"
+    ACTION=="add", SUBSYSTEMS=="pci", KERNELS=="0102:00:00.0", PROGRAM="rdma_rename %k NAME_FIXED mlx5_ib1"
+    ACTION=="add", SUBSYSTEMS=="pci", KERNELS=="0103:00:00.0", PROGRAM="rdma_rename %k NAME_FIXED mlx5_ib2"
+    ACTION=="add", SUBSYSTEMS=="pci", KERNELS=="0104:00:00.0", PROGRAM="rdma_rename %k NAME_FIXED mlx5_ib3"
+    ```
+3.	Reload udev rules and trigger device events:
+    ```bash
+    # udevadm control --reload
+    # udevadm trigger --type=devices --action=add
+    ```
+This solution ensures that RDMA device naming persists across VM reboots.
 
 ## Next steps
 

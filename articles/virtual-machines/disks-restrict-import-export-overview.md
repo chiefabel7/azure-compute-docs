@@ -34,10 +34,6 @@ If you're using Microsoft Entra ID to control resource access, you can also use 
 
 You can use private endpoints to restrict the upload and download of managed disks and more securely access data over a private link from clients on your Azure virtual network. The private endpoint uses an IP address from the virtual network address space for your managed disks. Network traffic between clients on their virtual network and managed disks only traverses over the virtual network and a private link on the Microsoft backbone network, eliminating exposure from the public internet. Use a disk access resource to facilitate private link connections to your disks. For details, see either the [portal](disks-enable-private-links-for-import-export-portal.yml) or [CLI](linux/disks-export-import-private-links-cli.md) articles.
 
-### Disk access
-
-The disk access resource is a tool you use to define private link parameters and associate them with private links.
-
 ## Azure policy
 
 [Configure an Azure Policy](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F8426280e-b5be-43d9-979e-653d12a08638) to disable public network access to your managed disks.

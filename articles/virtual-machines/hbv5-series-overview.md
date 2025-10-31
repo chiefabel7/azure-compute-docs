@@ -179,6 +179,7 @@ HBv5 VMs support Adaptive Routing, Dynamic Connected Transport (DCT, in addition
 > [!NOTE]
 > Optimal configuration depends on workload. Symmetric rank distribution usually performs best, but some workloads can benefit from using all **368 cores per VM**. Benchmark multiple configurations to determine the best setting.  
 *(Topology reference: 16 NUMA regions, 48 CCDs per VM.)*
+:::image type="content" source="./media/hpc/architecture/hbv5/hbv5-topology-vm.png" alt-text="Screenshot of HBv5-series VM Topology." lightbox="./media/hpc/architecture/hbv5/hbv5-topology-vm.png":::
 
 *   For multi VM jobs at scale, disable multi rail in UCX, using:
     ```bash

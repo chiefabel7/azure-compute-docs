@@ -177,7 +177,7 @@ HBv5 VMs support Adaptive Routing, Dynamic Connected Transport (DCT, in addition
           <other_options> <executable> <arguments>
         ```
 > [!NOTE]
-> Optimal configuration depends on workload. Symmetric rank distribution usually performs best, but some workloads may benefit from using all **368 cores per VM**. Benchmark multiple configurations to determine the best setting.  
+> Optimal configuration depends on workload. Symmetric rank distribution usually performs best, but some workloads can benefit from using all **368 cores per VM**. Benchmark multiple configurations to determine the best setting.  
 *(Topology reference: 16 NUMA regions, 48 CCDs per VM.)*
 
 *   For multi VM jobs at scale, disable multi rail in UCX, using:
@@ -233,8 +233,8 @@ Combined, the 8 NVMe devices provide 15 TiB of total local storage per VM.
 > Recommended image URN: almalinux:almalinux-hpc:8_7-hpc-gen2:8.7.2023060101, To deploy this image over Azure CLI, ensure the following parameters are included **--plan 8_7-hpc-gen2 --product almalinux-hpc --publisher almalinux**. For scaling tests, use the recommended URN along with the new [HPC-X tarball](https://github.com/Azure/azhpc-images/blob/c8db6de3328a691812e58ff56acb5c0661c4d488/alma/alma-8.x/alma-8.6-hpc/install_mpis.sh#L16).
 
 > [!NOTE]
-> * NDR support is added in UCX 1.13 or later. Older UCX versions report the above runtime error. UCX Error: Invalid active speed `[1677010492.951559] [updsb-vm-0:2754 :0]       ib_iface.c:1549 UCX ERROR Invalid active_speed on mlx5_ib0:1: 128`.
-> * Ibstat shows low speed (SDR): Older Mellanox OFED (MOFED) versions don't support NDR and it may report slower IB speeds. Use MOFED versions MOFED 5.6-1.0.3.3 or later.
+> * NDR support is added in UCX 1.13 or later. Older UCX versions report the referenced runtime error. UCX Error: Invalid active speed `[1677010492.951559] [updsb-vm-0:2754 :0]       ib_iface.c:1549 UCX ERROR Invalid active_speed on mlx5_ib0:1: 128`.
+> * Ibstat shows low speed (SDR): Older Mellanox OFED (MOFED) versions don't support NDR and it can report slower IB speeds. Use MOFED versions MOFED 5.6-1.0.3.3 or later.
 
 ## Next steps
 

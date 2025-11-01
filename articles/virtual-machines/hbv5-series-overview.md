@@ -35,7 +35,7 @@ To provide room for the Azure hypervisor to operate without interfering with the
 
 The following diagram shows the topology of the server. We reserve these 16 hypervisor host cores (yellow), taking the first core from specific Core Complex Dies (CCDs) in each NUMA domain, with the remaining cores for the HBv5-series VM (green).
 
-![Screenshot of HBv5-series server Topology](./media/hpc/architecture/hbv5/hbv5-topology-server.png)
+![Screenshot of HBv5-series server Topology.](./media/hpc/architecture/hbv5/hbv5-topology-server.png)
 
 The CCD boundary is different from a NUMA boundary. On HBv5, a group of six (6) consecutive CCDs is configured as a NUMA domain, both at the host server level and within a guest VM. Thus, all HBv5 VM sizes expose four uniform NUMA domains that appear to an OS and application as shown beneath, each with different number of cores depending on the specific [HBv5 VM size](./sizes/high-performance-compute/hbv5-series.md).
 
@@ -67,43 +67,43 @@ lstopo-no-graphics --no-io --no-legend --of txt
 <details>
 <summary>Select to view lstopo output for Standard_HB368rs_v5</summary>
 
-![lstopo output for HBv5-368 VM](./media/hpc/architecture/hbv5/hbv5-368-lstopo.png)
+![Screenshot of lstopo output for HBv5-368 VM.](./media/hpc/architecture/hbv5/hbv5-368-lstopo.png)
 </details>
 
 <details>
 <summary>Select to view lstopo output for Standard_HB368-336rs_v5</summary>
 
-![lstopo output for HBv5-336 VM](./media/hpc/architecture/hbv5/hbv5-336-lstopo.png)
+![Screenshot of lstopo output for HBv5-336 VM.](./media/hpc/architecture/hbv5/hbv5-336-lstopo.png)
 </details>
 
 <details>
 <summary>Select to view lstopo output for Standard_HB368-240rs_v5</summary>
 
-![lstopo output for HBv5-240 VM](./media/hpc/architecture/hbv5/hbv5-240-lstopo.png)
+![Screenshot of lstopo output for HBv5-240 VM.](./media/hpc/architecture/hbv5/hbv5-240-lstopo.png)
 </details>
 
 <details>
 <summary>Select to view lstopo output for Standard_HB368-288rs_v5</summary>
 
-![lstopo output for HBv5-288 VM](./media/hpc/architecture/hbv5/hbv5-288-lstopo.png)
+![Screenshot of lstopo output for HBv5-288 VM.](./media/hpc/architecture/hbv5/hbv5-288-lstopo.png)
 </details>
 
 <details>
 <summary>Select to view lstopo output for Standard_HB368-144rs_v5</summary>
 
-![lstopo output for HBv5-144 VM](./media/hpc/architecture/hbv5/hbv5-144-lstopo.png)
+![Screenshot of lstopo output for HBv5-144 VM.](./media/hpc/architecture/hbv5/hbv5-144-lstopo.png)
 </details>
 
 <details>
 <summary>Select to view lstopo output for Standard_HB368-96rs_v5</summary>
 
-:::image type="content" source="./media/hpc/architecture/hbv5/hbv5-96-lstopo.png" alt-text="lstopo output for HBv5-96 VM." lightbox="./media/hpc/architecture/hbv5/hbv5-96-lstopo.png":::
+:::image type="content" source="./media/hpc/architecture/hbv5/hbv5-96-lstopo.png" alt-text="Screenshot of lstopo output for HBv5-96 VM." lightbox="./media/hpc/architecture/hbv5/hbv5-96-lstopo.png":::
 </details>
 
 <details>
 <summary>Select to view lstopo output for Standard_HB368-48rs_v5</summary>
 
-:::image type="content" source="./media/hpc/architecture/hbv5/hbv5-48-lstopo.png" alt-text="lstopo output for HBv5-48 VM." lightbox="./media/hpc/architecture/hbv5/hbv5-48-lstopo.png":::
+:::image type="content" source="./media/hpc/architecture/hbv5/hbv5-48-lstopo.png" alt-text="Screenshot of lstopo output for HBv5-48 VM." lightbox="./media/hpc/architecture/hbv5/hbv5-48-lstopo.png":::
 </details>
 
 ## InfiniBand networking

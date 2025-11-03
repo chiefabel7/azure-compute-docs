@@ -67,43 +67,49 @@ lstopo-no-graphics --no-io --no-legend --of txt
 <details>
 <summary>Select to view lstopo output for Standard_HB368rs_v5</summary>
 
-![Screenshot of lstopo output for HBv5-368 VM.](./media/hpc/architecture/hbv5/hbv5-368-lstopo.png)
+:::image type="content" source="./media/hpc/architecture/hbv5/hbv5-368-lstopo.png" alt-text="Screenshot of lstopo output for HBv5-368 VM." lightbox="./media/hpc/architecture/hbv5/hbv5-368-lstopo-expanded.png":::
 </details>
 
 <details>
 <summary>Select to view lstopo output for Standard_HB368-336rs_v5</summary>
 
-![Screenshot of lstopo output for HBv5-336 VM.](./media/hpc/architecture/hbv5/hbv5-336-lstopo.png)
-</details>
-
-<details>
-<summary>Select to view lstopo output for Standard_HB368-240rs_v5</summary>
-
-![Screenshot of lstopo output for HBv5-240 VM.](./media/hpc/architecture/hbv5/hbv5-240-lstopo.png)
+:::image type="content" source="./media/hpc/architecture/hbv5/hbv5-336-lstopo.png" alt-text="Screenshot of lstopo output for HBv5-336 VM." lightbox="./media/hpc/architecture/hbv5/hbv5-336-lstopo-expanded.png":::
 </details>
 
 <details>
 <summary>Select to view lstopo output for Standard_HB368-288rs_v5</summary>
 
-![Screenshot of lstopo output for HBv5-288 VM.](./media/hpc/architecture/hbv5/hbv5-288-lstopo.png)
+:::image type="content" source="./media/hpc/architecture/hbv5/hbv5-288-lstopo.png" alt-text="Screenshot of lstopo output for HBv5-288 VM." lightbox="./media/hpc/architecture/hbv5/hbv5-288-lstopo-expanded.png":::
+</details>
+
+<details>
+<summary>Select to view lstopo output for Standard_HB368-240rs_v5</summary>
+
+:::image type="content" source="./media/hpc/architecture/hbv5/hbv5-240-lstopo.png" alt-text="Screenshot of lstopo output for HBv5-240 VM." lightbox="./media/hpc/architecture/hbv5/hbv5-240-lstopo-expanded.png":::
+</details>
+
+<details>
+<summary>Select to view lstopo output for Standard_HB368-192rs_v5</summary>
+
+:::image type="content" source="./media/hpc/architecture/hbv5/hbv5-192-lstopo.png" alt-text="Screenshot of lstopo output for HBv5-192 VM." lightbox="./media/hpc/architecture/hbv5/hbv5-192-lstopo-expanded.png":::
 </details>
 
 <details>
 <summary>Select to view lstopo output for Standard_HB368-144rs_v5</summary>
 
-![Screenshot of lstopo output for HBv5-144 VM.](./media/hpc/architecture/hbv5/hbv5-144-lstopo.png)
+:::image type="content" source="./media/hpc/architecture/hbv5/hbv5-144-lstopo.png" alt-text="Screenshot of lstopo output for HBv5-144 VM." lightbox="./media/hpc/architecture/hbv5/hbv5-144-lstopo-expanded.png":::
 </details>
 
 <details>
 <summary>Select to view lstopo output for Standard_HB368-96rs_v5</summary>
 
-:::image type="content" source="./media/hpc/architecture/hbv5/hbv5-96-lstopo.png" alt-text="Screenshot of lstopo output for HBv5-96 VM." lightbox="./media/hpc/architecture/hbv5/hbv5-96-lstopo.png":::
+:::image type="content" source="./media/hpc/architecture/hbv5/hbv5-96-lstopo.png" alt-text="Screenshot of lstopo output for HBv5-96 VM." lightbox="./media/hpc/architecture/hbv5/hbv5-96-lstopo-expanded.png":::
 </details>
 
 <details>
 <summary>Select to view lstopo output for Standard_HB368-48rs_v5</summary>
 
-:::image type="content" source="./media/hpc/architecture/hbv5/hbv5-48-lstopo.png" alt-text="Screenshot of lstopo output for HBv5-48 VM." lightbox="./media/hpc/architecture/hbv5/hbv5-48-lstopo.png":::
+:::image type="content" source="./media/hpc/architecture/hbv5/hbv5-48-lstopo.png" alt-text="Screenshot of lstopo output for HBv5-48 VM." lightbox="./media/hpc/architecture/hbv5/hbv5-48-lstopo-expanded.png":::
 </details>
 
 ## InfiniBand networking

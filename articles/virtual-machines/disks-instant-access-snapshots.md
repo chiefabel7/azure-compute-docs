@@ -53,7 +53,6 @@ After the time specified in `InstantAccessDurationMins` elapses, or five hours h
 - Ultra Disks and Premium SSD v2 that have active instant access snapshots can't be attached across fault domains
 - To use Instant Access with Ultra Disks, the snapshot must be created from a newly provisioned Ultra Disks.
 - You cannot create instant access snapshot from Azure portal.
-- Differences between snapshots created using Instant Access cannot be retrieved. 
 
 ### Regional availability
 

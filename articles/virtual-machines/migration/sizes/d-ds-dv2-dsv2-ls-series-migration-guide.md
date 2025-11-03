@@ -88,6 +88,10 @@ If you are actively running any sizes listed in this article, these VMs are set 
  - **Regional Availability**: The v5 and v6 series has broader regional support across Azure data centers.
  - **Future-proofing**: Migrate ahead of the retirement schedule to avoid disruption.
 
+#### Q: What Happens to my VMs After the Final Retirement Date?
+
+After the retirement date, any remaining VM subscriptions will be deallocated. They will stop running, no longer incur billing charges, and the retired VM size will not be covered by SLA or supported.
+
 #### Q: I am on pay-as-you-go (PayGo) or Savings Plan Pricing. Is There a Concern with Migration?
 
 No. If you’re using PayGo or a savings plan, migrating to a newer VM type won't disrupt your current billing. The migration process remains seamless with no changes required in your subscription or payment plan.

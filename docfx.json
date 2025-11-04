@@ -148,6 +148,8 @@
         "articles/virtual-machines/*.md": "cynthn",
         "articles/virtual-machines/linux/*.md": "cynthn",
         "articles/virtual-machines/windows/*.md": "cynthn"
+		"articles/virtual-machines/sizes/**/*.yml": "mattmcinnes",
+		"articles/virtual-machines/sizes/**/*.md": "mattmcinnes",
       },
       "featureFlags": {
         "articles/**/*.md": [
@@ -199,12 +201,16 @@
         "articles/container-instances/**/*.yml": "wwilliams, cynthn",
         "articles/service-fabric/**/*.yml": "wwilliams, cynthn",
         "articles/virtual-machines/**/*.yml": "wwilliams, cynthn",
+		"articles/virtual-machines/sizes/**/*.yml": "mattmcinnes, cynthn",
+		"articles/virtual-machines/sizes/**/*.md": "mattmcinnes, cynthn",
         "articles/virtual-machine-scale-sets/**/*.yml": "wwilliams, cynthn"
       },      
       "ms.author": {
         "articles/container-instances/**/*.md": "macolso",
         "articles/service-fabric/*.md": "sukanyas",
         "articles/virtual-machines/*.md": "cynthn",
+		"articles/virtual-machines/sizes/**/*.yml": "mattmcinnes",
+		"articles/virtual-machines/sizes/**/*.md": "mattmcinnes",		  
         "articles/virtual-machines/linux/*.md": "cynthn",
         "articles/virtual-machines/windows/*.md": "cynthn"
       },

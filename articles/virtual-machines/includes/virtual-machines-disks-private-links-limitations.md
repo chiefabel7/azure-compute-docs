@@ -13,4 +13,4 @@
 
 - You can't import or export more than 100 disks or snapshots at the same time with the same disk access resource
 - You can't upload to a disk with both a disk access resource and a disk encryption set
-- Disk access resources have their own scale targets, particularly around ingress/egress of data. These limits apply cumulatively to all disks associated to a disk access resource that has an active SAS URI. For details see [here](/azure/storage/common/scalability-targets-standard-account#scale-targets-for-standard-storage-accounts-and-disk-access-resources)
+- In addition to the scale targets that apply to individual disks, disk access resources have more scale targets that are centered around ingress/egress of data. These limits apply cumulatively to all disks associated with a disk access resource. For details see [here](/azure/storage/common/scalability-targets-standard-account#scale-targets-for-standard-storage-accounts-and-disk-access-resources)

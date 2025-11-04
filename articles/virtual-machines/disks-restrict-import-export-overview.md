@@ -4,7 +4,7 @@ description: Restrict managed disks from being imported or exported
 author: roygara
 ms.service: azure-disk-storage
 ms.topic: how-to
-ms.date: 09/25/2024
+ms.date: 11/04/2025
 ms.author: rogarana
 # Customer intent: As an IT security administrator, I want to restrict the import and export of Azure managed disks, so that I can safeguard sensitive data and ensure compliance with organizational policies.
 ---

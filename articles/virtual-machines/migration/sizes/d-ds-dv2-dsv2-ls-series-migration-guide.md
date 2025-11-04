@@ -78,8 +78,8 @@ Refer to the full [Azure VM resizing guide](/azure/virtual-machines/sizes/resize
 
 ## FAQ
 #### Q: Which Sizes Are Being Retired?
-To review retired sizes, see [retired Azure VM sizes](https://learn.microsoft.com/azure/virtual-machines/sizes/retirement/retired-sizes-list).
-
+To review retired sizes, see [retired Azure VM sizes](/azure/virtual-machines/sizes/retirement/retired-sizes-list).
+git
 #### Q: Why Should I Migrate?
 
 If you are actively running any sizes listed in this article, these VMs are set to retire in 2028. Migration is mandatory to avoid unexpected shutdown. Additionally, migration yields the following benefits: 

@@ -12,6 +12,7 @@ ms.reviewer: mattmcinnes
 ---
 
 # Edsv7 sizes series
+[!INCLUDE [sizes-preview-tag](../includes/sizes-preview-tag.md)]
 
 [!INCLUDE [edsv7-summary](./includes/edsv7-series-summary.md)]
 

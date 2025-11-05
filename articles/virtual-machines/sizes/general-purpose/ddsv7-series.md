@@ -53,18 +53,18 @@ Local (temp) storage info for each size
 
 | Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) | Temp Disk Random Read (RR)<sup>1</sup> IOPS | Temp Disk Random Read (RR)<sup>1</sup> Throughput (MB/s) | Temp Disk Random Write (RW)<sup>1</sup> IOPS | Temp Disk Random Write (RW)<sup>1</sup> Throughput (MB/s) |
 | --- | --- | --- | --- | --- | --- | --- |
-| Standard_D2ds_v7 | 1 | 110 | 50,000 | 423 | 25,000 | 90 |
-| Standard_D4ds_v7 | 1 | 220 | 100,000 | 423 | 50,000 | 180 |
-| Standard_D8ds_v7 | 1 | 440 | 200,000 | 423 | 100,000 | 360 |
-| Standard_D16ds_v7 | 2 | 440 | 400,000 | 423 | 200,000 | 720 |
-| Standard_D32ds_v7 | 4 | 440 | 600,000 | 423 | 400,000 | 1440 |
-| Standard_D48ds_v7 | 6 | 440 | 800,000 | 423 | 600,000 | 2160 |
-| Standard_D64ds_v7 | 4 | 880 | 1,200,000 | 423 | 800,000 | 2880 |
-| Standard_D96ds_v7 | 6 | 880 | 1,600,000 | 423 | 720 | 1,200,000 |
-| Standard_D128ds_v7 | 4 | 1,760 | 2,400,000 | 11520 | 1,600,000 | 5760 |
-| Standard_D192ds_v7 | 6 | 1,760 | 3,200,000 | 17280 | 2,400,000 | 8640 |
-| Standard_D248ds_v7 | 8 | 1,760 | 6,400,000 | 11520 | 3,200,000 | 5760 |
-| Standard_D372ds_v7 | 6 | 3,250 | 9,000,000 | 17280 | 4,500,000 | 8640 |
+| Standard_D2ds_v7 | 1 | 110 | 50,000 | 280 | 25,000 | 140 |
+| Standard_D4ds_v7 | 1 | 220 | 100,000 | 560 | 50,000 | 280 |
+| Standard_D8ds_v7 | 1 | 440 | 200,000 | 1,120 | 100,000 | 560 |
+| Standard_D16ds_v7 | 2 | 440 | 400,000 | 2,240 | 200,000 | 1,120 |
+| Standard_D32ds_v7 | 4 | 440 | 800,000 | 4,480 | 400,000 | 2,240 |
+| Standard_D48ds_v7 | 6 | 440 | 1,200,000 | 6,720 | 600,000 | 3,360 |
+| Standard_D64ds_v7 | 4 | 880 | 1,600,000 | 8,960 | 800,000 | 4,480 |
+| Standard_D96ds_v7 | 6 | 880 | 2,400,000 | 13,440 | 1,200,000 | 6,720 |
+| Standard_D128ds_v7 | 4 | 1,760 | 3,200,000 | 17,920 | 1,600,000 | 8,960 |
+| Standard_D192ds_v7 | 6 | 1,760 | 4,800,000 | 26,880 | 2,400,000 | 13,440 |
+| Standard_D248ds_v7 | 8 | 1,760 | 6,400,000 | 35,840 | 3,200,000 | 17,000 |
+| Standard_D372ds_v7 | 6 | 3,250 | 9,600,000 | 53,760 | 4,800,000 | 20,400 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)

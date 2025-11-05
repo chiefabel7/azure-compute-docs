@@ -10,7 +10,7 @@ ms.author: mattmcinnes
 ms.reviewer: mattmcinnes
 # Customer intent: As an IT administrator, I want to understand the specifications and capabilities of the Dlsv6 series virtual machines, so that I can make informed decisions when selecting the appropriate VM size for my cloud computing needs.
 ---
-# Dlsv6 sizes series
+# Dlsv7 sizes series
 
 [!INCLUDE [dlsv7-summary](./includes/dlsv7-series-summary.md)] 
 

@@ -148,5 +148,10 @@ Accelerator (GPUs, FPGAs, etc.) info for each size
 > [!NOTE]
 > No accelerators are present in this series.
 
+---
+> [!NOTE]
+> This VM series will only work on OS images that support NVMe. If your current OS image doesn't have NVMe support, you’ll see an error message. [NVMe](../../../virtual-machines/enable-nvme-interface.md) support is available on the most popular OS images, and we're continuously improving OS image compatibility.
 
+
+[!INCLUDE [sizes-footer](../includes/sizes-footer.md)]
 

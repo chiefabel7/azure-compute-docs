@@ -53,18 +53,18 @@ Local (temp) storage info for each size
 
 | Size Name | Max Temp Storage Disks (Qty.) | Temp Disk Size (GiB) | Temp Disk Random Read (RR)<sup>1</sup> IOPS | Temp Disk Random Read (RR)<sup>1</sup> Throughput (MB/s) | Temp Disk Random Write (RW)<sup>1</sup> IOPS | Temp Disk Random Write (RW)<sup>1</sup> Throughput (MB/s) |
 | --- | --- | --- | --- | --- | --- | --- |
-| Standard_E2ds_v7 | 1 | 110 | 50,000 | 280 | 25,000 | 120 |
-| Standard_E4ds_v7 | 1 | 220 | 100,000 | 560 | 50,000 | 240 |
-| Standard_E8ds_v7 | 1 | 440 | 200,000 | 1,120 | 100,000 | 480 |
-| Standard_E16ds_v7 | 2 | 440 | 400,000 | 2,240 | 200,000 | 960 |
-| Standard_E20ds_v7 | 2 | 550 | 500,000 | 2,800 | 250,000 | 1,200 |
-| Standard_E32ds_v7 | 4 | 440 | 800,000 | 4,480 | 400,000 | 1,920 |
-| Standard_E48ds_v7 | 6 | 440 | 1,200,000 | 6,720 | 600,000 | 2,880 |
-| Standard_E64ds_v7 | 4 | 880 | 1,600,000 | 8,960 | 800,000 | 3,849 |
-| Standard_E96ds_v7 | 6 | 880 | 2,400,000 | 13,440 | 1,200,000 | 5,760 |
-| Standard_E128ds_v7 | 4 | 1,760 | 3,200,000 | 17,920 | 1,600,000 | 7,680 |
-| Standard_E192ds_v7 | 6 | 1,760 | 4,800,000 | 26,880 | 2,400,000 | 11,520 |
-| Standard_E248ds_v7 | 4 | 1,760 | 6,400,000 | 35,840 | 3,200,000 | 15,360 |
+| Standard_E2ds_v7 | 1 | 110 | 50,000 | 280 | 25,000 | 140 |
+| Standard_E4ds_v7 | 1 | 220 | 100,000 | 560 | 50,000 | 280 |
+| Standard_E8ds_v7 | 1 | 440 | 200,000 | 1,120 | 100,000 | 560 |
+| Standard_E16ds_v7 | 2 | 440 | 400,000 | 2,240 | 200,000 | 1,120 |
+| Standard_E20ds_v7 | 2 | 550 | 500,000 | 2,800 | 250,000 | 1,400 |
+| Standard_E32ds_v7 | 4 | 440 | 800,000 | 4,480 | 400,000 | 2,240 |
+| Standard_E48ds_v7 | 6 | 440 | 1,200,000 | 6,720 | 600,000 | 3,360 |
+| Standard_E64ds_v7 | 4 | 880 | 1,600,000 | 8,960 | 800,000 | 4,480 |
+| Standard_E96ds_v7 | 6 | 880 | 2,400,000 | 13,440 | 1,200,000 | 6,720 |
+| Standard_E128ds_v7 | 4 | 1,760 | 3,200,000 | 17,920 | 1,600,000 | 8,960 |
+| Standard_E192ds_v7 | 6 | 1,760 | 4,800,000 | 26,880 | 2,400,000 | 13,440 |
+| Standard_E248ds_v7 | 4 | 1,760 | 6,400,000 | 35,840 | 3,200,000 | 17,000 |
 | Standard_E372ds_v7 | 3 | 7,040 | 6,900,000 | 36,000 | 3,450,000 | 18,000 |
 
 #### Storage resources

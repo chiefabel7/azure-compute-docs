@@ -149,7 +149,7 @@
         "articles/virtual-machines/linux/*.md": "cynthn",
         "articles/virtual-machines/windows/*.md": "cynthn"
 		"articles/virtual-machines/sizes/**/*.yml": "mattmcinnes",
-		"articles/virtual-machines/sizes/**/*.md": "mattmcinnes",
+		"articles/virtual-machines/sizes/**/*.md": "mattmcinnes"
       },
       "featureFlags": {
         "articles/**/*.md": [

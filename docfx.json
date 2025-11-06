@@ -147,7 +147,7 @@
         "articles/service-fabric/*.md": "sukanyamsft",
         "articles/virtual-machines/*.md": "cynthn",
         "articles/virtual-machines/linux/*.md": "cynthn",
-        "articles/virtual-machines/windows/*.md": "cynthn"
+        "articles/virtual-machines/windows/*.md": "cynthn",
 		"articles/virtual-machines/sizes/**/*.yml": "mattmcinnes",
 		"articles/virtual-machines/sizes/**/*.md": "mattmcinnes"
       },
@@ -219,6 +219,10 @@
         "articles/service-fabric/*.md": "azure-service-fabric",
         "articles/virtual-machines/*.md": "azure-virtual-machines",
         "articles/virtual-machine-scale-sets/*.md": "azure-virtual-machine-scale-sets"
+      },
+	  },
+	  "ms.subservice": {
+        "articles/virtual-machines/sizes/*.md": "azure-virtual-machines"
       },
       "searchScope": {
         "articles/virtual-machines/**/*.md": [

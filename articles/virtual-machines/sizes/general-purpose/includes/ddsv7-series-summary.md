@@ -12,8 +12,7 @@ ms.custom: include file
 # Customer intent: "As a cloud architect, I want to evaluate Ddsv6-series virtual machines’ specifications and capabilities, so that I can determine if they meet my organization’s performance and scalability requirements for general-purpose workloads."
 ---
 
-Ddsv7-series virtual machines run on the  6th Generation Intel® Xeon® Platinum 6973PC (Granite Rapids) processor reaching an all-core turbo clock speed of 4.2 GHz. 
-This new processor features [Intel&reg; Turbo Boost Technology](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), 
+Ddsv7-series virtual machines run on the Intel® Xeon® 6 Platinum 6973PC (Granite Rapids) processor reaching an all-core turbo clock speed of 3.6 GHz with a max turbo frequency is 4.2 GHz. This new processor features [Intel&reg; Turbo Boost Technology](https://www.intel.com/content/www/us/en/architecture-and-technology/turbo-boost/turbo-boost-technology.html), 
 [Intel&reg; Advanced-Vector Extensions 512 (Intel&reg; AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html), 
 and [Intel&reg; Advanced Matrix Extensions](https://www.intel.com/content/www/us/en/products/docs/accelerator-engines/advanced-matrix-extensions/overview.html). 
 These virtual machines offer up to 372 vCPU and 1,488 GiB of RAM. Ddsv7-series virtual machines provide better performance for most general-purpose workloads compared to 

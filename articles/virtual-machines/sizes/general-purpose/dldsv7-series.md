@@ -13,6 +13,8 @@ ms.reviewer: mattmcinnes
 
 # Dldsv7 sizes series
 
+[!INCLUDE [sizes-preview-tag](../includes/sizes-preview-tag.md)]
+
 [!INCLUDE [dldsv7-summary](./includes/dldsv7-series-summary.md)]
 
 ## Host specifications

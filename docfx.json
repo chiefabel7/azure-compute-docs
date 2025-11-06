@@ -221,7 +221,7 @@
         "articles/virtual-machine-scale-sets/*.md": "azure-virtual-machine-scale-sets"
       },
 	  "ms.subservice": {
-        "articles/virtual-machines/sizes/*.md": "azure-virtual-machines"
+        "articles/virtual-machines/sizes/*.md": "sizes"
       },
       "searchScope": {
         "articles/virtual-machines/**/*.md": [

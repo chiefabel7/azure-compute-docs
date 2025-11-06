@@ -12,7 +12,7 @@ ms.reviewer: mattmcinnes
 ---
 # Dlsv7 sizes series
 
-[!INCLUDE [sizes-preview-tag](../includes/sizes-preview-tag.md)]
+[!INCLUDE [sizes-preview-tag](https://github.com/chiefabel7/azure-compute-docs/blob/main/articles/virtual-machines/sizes/general-purpose/includes/dlsv7-series-summary.md)]
 
 [!INCLUDE [dlsv7-summary](/includes/dlsv7-series-summary.md)] 
 
@@ -29,19 +29,19 @@ ms.reviewer: mattmcinnes
 
 vCPUs (Qty.) and Memory for each size
 
-| Size Name | vCPUs (Qty.) | Memory (GB) |
+| Size Name | vCPUs (Qty.) | Memory (GiB) |
 | --- | --- | --- |
-| Standard_D2ls_v7 | 2 | 8 |
-| Standard_D4ls_v7 | 4 | 16 |
-| Standard_D8ls_v7 | 8 | 32 |
-| Standard_D16ls_v7 | 16 | 64 |
-| Standard_D32ls_v7 | 32 | 128 |
-| Standard_D48ls_v7 | 48 | 192 |
-| Standard_D64ls_v7 | 64 | 256 |
+| Standard_D2ls_v7 | 2 | 4 |
+| Standard_D4ls_v7 | 4 | 8 |
+| Standard_D8ls_v7 | 8 | 16 |
+| Standard_D16ls_v7 | 16 | 32 |
+| Standard_D32ls_v7 | 32 | 64 |
+| Standard_D48ls_v7 | 48 | 96 |
+| Standard_D64ls_v7 | 64 | 126 |
 | Standard_D96ls_v7 | 96 | 384 |
-| Standard_D128ls_v7 | 128 | 512 |
-| Standard_D192ls_v7 | 192 | 768 |
-| Standard_D248ls_v7 | 248 | 992 |
+| Standard_D128ls_v7 | 128 | 256 |
+| Standard_D192ls_v7 | 192 | 384 |
+| Standard_D248ls_v7 | 248 | 496 |
 
 
 #### VM Basics resources

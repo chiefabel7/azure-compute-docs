@@ -53,7 +53,7 @@ Ultra Disks must be used as data disks and can only be created as empty disks. W
 
 ### Ultra Disk size
 
-Ultra Disk sizes range from 4 GiB up to 64 GiB, in 1 GiB increments. Ultra Disk capacity works like Premium SSD v2 disks and you're billed on a per GiB ratio.
+Ultra Disk sizes range from 4 GiB up to 64 TiB, in 1 GiB increments. Ultra Disk capacity works like Premium SSD v2 disks and you're billed on a per GiB ratio.
 
 Ultra Disks offer up to 100 TiB per region per subscription by default and Ultra Disks support higher capacity by request. To request an increase in capacity, request a quota increase or contact Azure Support.
 
@@ -70,7 +70,7 @@ The following table provides an example of performance caps an Ultra Disk has de
 |256     |256,000 (76,000)*         |10,000         |
 |512     |400,000 (153,000)*         |10,000         |
 |1,024    |400,000 (307,200)*        |10,000        |
-|2,048-65,536 (sizes in this range increasing in increments of 1 TiB)     |400,000         |10,000         |
+|2,048-65,536|400,000         |10,000         |
 
 \* Only applies during deployment of Virtual Machine Scale Sets with Uniform orchestration mode. Setting a higher value during deployment results in a failed deployment. After deployment completes you can [increase the performance](disks-enable-ultra-ssd.md#adjust-the-performance-of-an-ultra-disk) of your disks.
 

@@ -12,9 +12,9 @@ ms.reviewer: mattmcinnes
 ---
 # Dlsv7 sizes series
 
-[!INCLUDE [sizes-preview-tag](https://github.com/chiefabel7/azure-compute-docs/blob/main/articles/virtual-machines/sizes/general-purpose/includes/dlsv7-series-summary.md)]
+[!INCLUDE [sizes-preview-tag](../includes/sizes-preview-tag.md)]
 
-[!INCLUDE [dlsv7-summary](/includes/dlsv7-series-summary.md)] 
+[!INCLUDE [dlsv7-summary](https://github.com/chiefabel7/azure-compute-docs/blob/main/articles/virtual-machines/sizes/general-purpose/includes/dlsv7-series-summary.md)] 
 
 ## Host specifications
 [!INCLUDE [dlsv7-series-specs](/includes/dlsv7-series-specs.md)]

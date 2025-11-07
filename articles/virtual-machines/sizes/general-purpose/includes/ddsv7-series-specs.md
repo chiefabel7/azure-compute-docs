@@ -1,6 +1,6 @@
 ---
 title: Ddsv7 series specs include
-description: Include file containing specifications of Dsv6-series VM sizes.
+description: Include file containing specifications of Dsv7-series VM sizes.
 author: mattmcinnes
 ms.topic: include
 ms.service: azure-virtual-machines
@@ -13,7 +13,7 @@ ms.custom: include file
 ---
 | Part | Quantity <br><sup>Count Units | Specs <br><sup>SKU ID, Performance Units, etc.  |
 |---|---|---|
-| Processor      | 2 - 372 vCPUs       |Intel@ Xeon® 6 processor (Granite Rapids) [x86-64]                               |
+| Processor      | 2 - 372 vCPUs       |Intel@ Xeon® 6 processor 6973PC(Granite Rapids) [x86-64]                               |
 | Memory         | 8 - 1,488 GiB          |                                  |
 | Local Storage  | None           |                                |
 | Remote Storage | 10 - 64 Disks    | 4,000 - 500,000 IOPS <br>118 - 16,000 MBps   |

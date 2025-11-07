@@ -65,9 +65,6 @@ Local (temp) storage info for each size
 | Standard_D372ds_v7 | 6 | 3,250 | 9,600,000 | 53,760 | 4,800,000 | 20,400 |
 
 #### Storage resources
-- [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)
-- [Azure managed disk types](../../../virtual-machines/disks-types.md)
-- [Share an Azure managed disk](../../../virtual-machines/disks-shared.md)
 - [NVMe Overview](/azure/virtual-machines/nvme-overview)
 - [FAQ for temp NVMe disks](/azure/virtual-machines/enable-nvme-temp-faqs)
 

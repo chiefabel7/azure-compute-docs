@@ -71,6 +71,8 @@ Local (temp) storage info for each size
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)
 - [Azure managed disk types](../../../virtual-machines/disks-types.md)
 - [Share an Azure managed disk](../../../virtual-machines/disks-shared.md)
+- [NVMe Overview](/azure/virtual-machines/nvme-overview)
+- [FAQ for temp NVMe disks](/azure/virtual-machines/enable-nvme-temp-faqs)
 
 #### Table definitions
 - <sup>1</sup>Temp disk speed often differs between RR (Random Read) and RW (Random Write) operations. RR operations are typically faster than RW operations. The RW speed is usually slower than the RR speed on series where only the RR speed value is listed.

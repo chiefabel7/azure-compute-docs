@@ -23,7 +23,7 @@ The key benefits of replica soft delete are:
 
 ## Lifecycle of a soft-deleted replica
 
-When a stateful service replicas are removed either through the administrative PowerShell API (Remove-ServiceFabricReplica), or directly through the Fabric Client API, Service Fabric will now transition the replica into a `ToBeRemoved` state. In this new state, the replicas are closed, releasing compute resources. However, SF continues to track these replicas and ensures that replica data on disk isn't cleaned up in case the partition is in quorum loss.  
+When stateful service replicas are removed either through the administrative PowerShell API (Remove-ServiceFabricReplica), or directly through the Fabric Client API, Service Fabric will now transition the replicas into a `ToBeRemoved` state. In this new state, the replicas are closed, releasing compute resources. However, SF continues to track these replicas and ensures that replica data on disk isn't cleaned up in case the partition is in quorum loss.  
 
 If removing the replica causes the partition to go into quorum loss, Service Fabric would wait for manual intervention to bring the partition out of quorum loss by recovering the soft deleted replicas.  
 
@@ -35,7 +35,7 @@ Soft deleted replicas don't block repairs, upgrades, or other administrative ope
 
 The following diagram shows the flow for replica soft delete:
 
-![Diagram showing the process flow for a replica soft delete action.](./media/service-fabric-replica-soft-delete/replica-soft-delete-lifecycle.png)
+:::image type="content" source="media/service-fabric-replica-soft-delete/replica-soft-delete-lifecycle.png" alt-text="Diagram showing the process flow for a replica soft delete action." lightbox="media/service-fabric-replica-soft-delete/replica-soft-delete-lifecycle.png":::
 
 ## Opt-in process
 
@@ -90,13 +90,13 @@ Usually, this behavior change won't impact existing workflows using the Remove R
 
   * The output would indicate what replicas in the partition are `ToBeRemoved`.
 
-    ![Sample command line output showing "To Be Removed" status.](./media/service-fabric-replica-soft-delete/to-be-removed-status.png)
+    :::image type="content" source="media/service-fabric-replica-soft-delete/to-be-removed-status.png" alt-text="Screenshot of sample command line output showing "To Be Removed" status." lightbox="media/service-fabric-replica-soft-delete/to-be-removed-status.png":::
 
 ### Service Fabric Explorer (SFX) changes
 
 SFX now shows `ToBeRemoved` replicas, along with the time by which they get cleaned up permanently.
 
-  !["To Be Removed" status in Service Fabric Explorer.](./media/service-fabric-replica-soft-delete/service-fabric-explorer-to-be-removed.png)
+  :::image type="content" source="media/service-fabric-replica-soft-delete/service-fabric-explorer-to-be-removed.png" alt-text="Screenshot of "To Be Removed" status in Service Fabric Explorer." lightbox="media/service-fabric-replica-soft-delete/service-fabric-explorer-to-be-removed.png":::
 
 ## Next steps
 

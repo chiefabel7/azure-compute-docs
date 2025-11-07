@@ -60,7 +60,7 @@ Local (temp) storage info for each size
 
 Remote (uncached) storage info for each size
 
-| Size Name | Max Remote Storage Disks (Qty.) | Uncached Premium SSD Disk IOPS | Uncached Premium SSD Throughput (MB/s) | Uncached Premium SSD Burst<sup>1</sup> IOPS | Uncached Premium SSD Burst<sup>1</sup> Throughput (MB/s) | Uncached Ultra Disk and Premium SSD v2 IOPS | Uncached Ultra Disk and Premium SSD v2 Throughput (MB/s) | Uncached Burst<sup>1</sup> Ultra Disk and Premium SSD v2 IOPS | Uncached Burst<sup>1</sup> Ultra Disk and Premium SSD v2 Disk Throughput (MB/s) |
+| Size Name | Max Remote Storage Disks (Qty.) | Uncached Premium SSD Disk IOPS | Uncached Premium SSD Throughput (MBps) | Uncached Premium SSD Burst<sup>1</sup> IOPS | Uncached Premium SSD Burst<sup>1</sup> Throughput (MBps) | Uncached Ultra Disk and Premium SSD v2 IOPS | Uncached Ultra Disk and Premium SSD v2 Throughput (MBps) | Uncached Burst<sup>1</sup> Ultra Disk and Premium SSD v2 IOPS | Uncached Burst<sup>1</sup> Ultra Disk and Premium SSD v2 Disk Throughput (MBps) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Standard_D2ls_v7 | 10 | 4,000 | 118 | 45,000 | 1,413 | 5,000 | 137 | 56,250 | 1,640 |
 | Standard_D4ls_v7 | 12 | 8,000 | 236 | 45.000 | 1,413 | 10,000 | 274 | 56,250 | 1,640 |
@@ -92,7 +92,7 @@ Remote (uncached) storage info for each size
 
 Network interface info for each size
 
-| Size Name | Max NICs (Qty.) | Max Network Bandwidth (Mb/s) |
+| Size Name | Max NICs (Qty.) | Max Network Bandwidth (Mbps) |
 | --- | --- | --- |
 | Standard_D2ls_v7 | 3 | 16,000 |
 | Standard_D4ls_v7 | 4 | 25,000 |

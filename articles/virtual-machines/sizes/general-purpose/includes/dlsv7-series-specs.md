@@ -1,6 +1,6 @@
 ---
 title: Dlsv6 series specs include
-description: Include file containing specifications of Dlsv6-series VM sizes.
+description: Include file containing specifications of Dlsv7-series VM sizes.
 author: mattmcinnes
 ms.topic: include
 ms.service: azure-virtual-machines

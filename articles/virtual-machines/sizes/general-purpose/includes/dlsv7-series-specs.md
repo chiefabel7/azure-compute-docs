@@ -1,5 +1,5 @@
 ---
-title: Dlsv6 series specs include
+title: Dlsv7 series specs include
 description: Include file containing specifications of Dlsv7-series VM sizes.
 author: mattmcinnes
 ms.topic: include

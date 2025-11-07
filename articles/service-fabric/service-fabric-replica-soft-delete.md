@@ -39,21 +39,11 @@ The following diagram shows the flow for replica soft delete:
 
 ![Diagram showing the process flow for a replica soft delete action.](./media/service-fabric-replica-soft-delete/replica-soft-delete-lifecycle.png)
 
-## Changes in replica behavior
-
-Replica soft delete is available as an opt-in feature in Service Fabric 11.x release, starting with SF 11.3. Beginning with SF runtime release 12.0, it is enabled by default for all customers.
-
-Upon removal of stateful service replicas—whether initiated through the administrative PowerShell API (Remove-ServiceFabricReplica), or the Fabric Client API—Service Fabric transitions the affected replicas to the `ToBeRemoved` state.
-
-`ToBeRemoved` replicas can be queried using the existing replica query API. To recover these replicas, a new Restore Replica API (Restore-ServiceFabricReplica) is introduced. This API can be used with the latest SF SDK version, either using PowerShell or FabricClient APIs directly. More details on the API behavior in the sections.  
-
-Even without the new SDK, replicas are still soft-deleted once the feature is enabled, providing safeguards against data loss.
-
-Usually, this behavior change won't impact existing workflows using the Remove Replica API, since SF automatically handles the cleanup within 10 minutes of deleting the replica if the partition is healthy. However, during this short window, you may notice a couple of temporary side effects. Specifically, placements for new replicas of the same partition will be blocked on nodes with soft-deleted replicas. Also, as the soft-deleted replica is cleaned up, the replica process comes back up momentarily to allow a graceful cleanup of disk resources.
-
 ## Opt-in process
 
-The behavior can be enabled in Service Fabric 11.x release, starting with SF 11.3, by setting the IsDelayedReplicaCleanupEnabled configuration under the ReconfigurationAgent section in the cluster manifest to be “true”. For example, the following shows a configuration update using an ARM template:  
+Replica soft delete is available as an opt-in feature in Service Fabric 11.x releases, starting with SF 11.3. Beginning with SF runtime release 12.0, it's enabled by default for all customers.
+
+Starting with SF 11.3, this behavior can be enabled by setting the `IsDelayedReplicaCleanupEnabled` configuration under the ReconfigurationAgent section in the cluster manifest to be “true”. For example, the following shows a configuration update using an ARM template:  
 
 ```json
 { 
@@ -67,13 +57,23 @@ The behavior can be enabled in Service Fabric 11.x release, starting with SF 11.
 }
 ```
 
-## Newly introduced APIs
+## Changes in user experience
+
+Upon removal of stateful service replicas—whether initiated through the administrative PowerShell API (Remove-ServiceFabricReplica), or the Fabric Client API—Service Fabric transitions the affected replicas to the `ToBeRemoved` state.
+
+`ToBeRemoved` replicas can be queried using the existing replica query API. To recover these replicas, a new Restore Replica API (Restore-ServiceFabricReplica) is introduced. This API can be used with the latest SF SDK version, either using PowerShell or FabricClient APIs directly. More details on the API behavior in the sections.  
+
+Even without the new SDK, replicas are still soft-deleted once the feature is enabled, providing safeguards against data loss.
+
+Usually, this behavior change won't impact existing workflows using the Remove Replica API, since SF automatically handles the cleanup within 10 minutes of deleting the replica if the partition is healthy. However, during this short window, you may notice a couple of temporary side effects. Specifically, placements for new replicas of the same partition will be blocked on nodes with soft-deleted replicas. Also, as the soft-deleted replica is cleaned up, the replica process comes back up momentarily to allow a graceful cleanup of disk resources.
+
+### Newly introduced APIs
 
 * Restore-ServiceFabricReplica:
 
   * Syntactically similar to [Restart-ServiceFabricReplica](/powershell/module/servicefabric/restart-servicefabricreplica). Recovers a `ToBeRemoved` replica by reopening the Replica object. If the partition was in quorum loss, customers should restore all soft deleted replicas using this API. Service Fabric automatically determines which replicas to retain to restore quorum.
 
-## Changes to the behavior of existing APIs
+### Changes to the behavior of existing APIs
 
 * [Remove-ServiceFabricReplica](/powershell/module/servicefabric/remove-servicefabricreplica):
 
@@ -91,7 +91,7 @@ The behavior can be enabled in Service Fabric 11.x release, starting with SF 11.
 
     ![Sample command line output showing "To Be Removed" status.](./media/service-fabric-replica-soft-delete/to-be-removed-status.png)
 
-## Service Fabric Explorer (SFX) changes
+### Service Fabric Explorer (SFX) changes
 
 SFX now shows `ToBeRemoved` replicas, along with the time by which they get cleaned up permanently.
 

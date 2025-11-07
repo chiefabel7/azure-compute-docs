@@ -1,6 +1,6 @@
 ---
 title: Esv7 size series
-description: Information on and specifications of the Esv6-series sizes
+description: Information on and specifications of the Esv7-series sizes
 author: mattmcinnes
 ms.service: azure-virtual-machines
 ms.subservice: sizes

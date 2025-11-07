@@ -1,6 +1,6 @@
 ---
 title: Dsv7 series specs include
-description: Include file containing specifications of Dsv6-series VM sizes.
+description: Include file containing specifications of Dsv7-series VM sizes.
 author: mattmcinnes
 ms.topic: include
 ms.service: azure-virtual-machines

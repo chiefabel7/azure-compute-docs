@@ -12,11 +12,9 @@ ms.date: 11/07/2025
 
 # Replica soft delete for enhanced data protection in Service Fabric
 
-A [replica of a stateful service](./service-fabric-concepts-replica-lifecycle.md#replicas-of-stateful-services) is a copy of the service logic running on one of the nodes of the cluster. This article introduces a new Service Fabric enhancement: soft delete for replicas. Replica soft delete (RSD) provides another layer of data protection and operational safety for stateful workloads. This feature provides a safeguard against accidental or unintended data loss when using remove replica destructive operations on stateful persistent services. Instead of immediately and permanently deleting data, Service Fabric now retains a snapshot of the replica at the time of deletion until the partition regains quorum. RSD operates in the background for every deleted replica.  
+A [replica of a stateful service](./service-fabric-concepts-replica-lifecycle.md#replicas-of-stateful-services) is a copy of the service logic running on one of the nodes of the cluster. This article introduces a new Service Fabric enhancement - soft delete for stateful replicas. Replica Soft Delete (RSD) provides an additional layer of data protection and operational safety for stateful workloads, helping ensure data integrity and reliability. This feature provides a safeguard against accidental or unintended data loss when using Remove Replica destructive operations on stateful persistent services. Instead of immediately and permanently deleting data, Service Fabric now retains a snapshot of the replica at the time of deletion until the partition regains quorum. RSD operates in the background for every deleted replica.  
 
-RSD also incorporates smart deletion logic, which automatically identifies and permanently removes soft-deleted replicas that are stale if the partition is otherwise healthy. This feature ensures efficient resource management across the Service Fabric cluster.  
-
-RSD directly addresses customer feedback and real-world cases/incidents where accidental use of destructive APIs caused data loss. This enhancement significantly improves customers’ ability to safeguard critical data and recover from operational errors without data loss. Replica Soft Delete provides a safety net, making it easier to recover from mistakes and maintain data integrity.
+RSD also incorporates smart deletion logic, which automatically identifies and permanently removes soft-deleted replicas that are stale if the partition is otherwise healthy. This ensures efficient resource management across the Service Fabric cluster.  
 
 The key benefits of replica soft delete are:
 
@@ -67,6 +65,9 @@ Even without the new SDK, replicas are still soft-deleted once the feature is en
 
 Usually, this behavior change won't impact existing workflows using the Remove Replica API, since SF automatically handles the cleanup within 10 minutes of deleting the replica if the partition is healthy. However, during this short window, you may notice a couple of temporary side effects. Specifically, placements for new replicas of the same partition will be blocked on nodes with soft-deleted replicas. Also, as the soft-deleted replica is cleaned up, the replica process comes back up momentarily to allow a graceful cleanup of disk resources.
 
+> [!NOTE]
+> RSD works regardless of whether [Backup and Restore Service (BRS)](service-fabric-reliable-services-backup-restore.md) is enabled or not.
+
 ### Newly introduced APIs
 
 * Restore-ServiceFabricReplica:
@@ -96,11 +97,6 @@ Usually, this behavior change won't impact existing workflows using the Remove R
 SFX now shows `ToBeRemoved` replicas, along with the time by which they get cleaned up permanently.
 
   !["To Be Removed" status in Service Fabric Explorer.](./media/service-fabric-replica-soft-delete/service-fabric-explorer-to-be-removed.png)
-
-## Additional information
-
-* For more details, please refer to the [release notes](release-notes.md) and updated documentation.
-* RSD works regardless of whether Backup and Restore Service (BRS) is enabled or not.
 
 ## Next steps
 

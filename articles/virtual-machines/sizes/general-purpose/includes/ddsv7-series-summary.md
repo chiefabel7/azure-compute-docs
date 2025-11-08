@@ -16,7 +16,7 @@ Ddsv7-series virtual machines run on the Intel® Xeon® 6 Platinum 6973PC (Grani
 [Intel&reg; Advanced-Vector Extensions 512 (Intel&reg; AVX-512)](https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html), 
 and [Intel&reg; Advanced Matrix Extensions](https://www.intel.com/content/www/us/en/products/docs/accelerator-engines/advanced-matrix-extensions/overview.html). 
 These virtual machines offer up to 372 vCPU and 1,488 GiB of RAM as well as fast, local SSD storage up to 6x3520 GiB. Ddsv7-series virtual machines provide better performance for most general-purpose workloads compared to 
-the prior generation with increased scalability, upgraded CPU performance, elevated memory bandwidth, faster NVMe local and remote storage access, and larger local storage capacity.
+the prior generation with increased scalability, upgraded CPU performance, elevated memory bandwidth, faster NVMe local and remote storage access, and larger local storage capacity. Ddsv7-series virtual machines are Ideal for many general computing workloads such as e-commerce systems, web applications, desktop virtualization solutions, application servers, and more.
 
 Ddsv7-series virtual machines offer local storage disks. You can attach Standard SSDs, Standard HDDs, Premium SSDs, and Premium SSD V2 disk storage to these virtual machines. 
 You can also attach Ultra Disk storage based on its regional availability. Disk storage is billed separately from virtual machines.

@@ -90,9 +90,13 @@ Usually, this behavior change won't impact existing workflows using the Remove R
 
   * The output would indicate what replicas in the partition are `ToBeRemoved`.
 
+:::image type="content" source="media/service-fabric-replica-soft-delete/to-be-removed-status.png" alt-text="Diagram showing the process flow for a replica soft delete action." lightbox="media/service-fabric-replica-soft-delete/to-be-removed-status.png":::
+
 ### Service Fabric Explorer (SFX) changes
 
 SFX now shows `ToBeRemoved` replicas, along with the time by which they get cleaned up permanently.
+
+:::image type="content" source="media/service-fabric-replica-soft-delete/service-fabric-explorer-to-be-removed.png" alt-text="Diagram showing the process flow for a replica soft delete action." lightbox="media/service-fabric-replica-soft-delete/service-fabric-explorer-to-be-removed.png":::
 
 ## Next steps
 

@@ -39,7 +39,7 @@ vCPUs (Qty.) and Memory for each size
 | Standard_D96ds_v7 | 96 | 384 |
 | Standard_D128ds_v7 | 128 | 512 |
 | Standard_D192ds_v7 | 192 | 768 |
-| Standard_D248ds_v7 | 248 | 1,488 |
+| Standard_D248ds_v7 | 248 | 992 |
 | Standard_D372ds_v7 | 372 | 1,488 |
 
 #### VM Basics resources

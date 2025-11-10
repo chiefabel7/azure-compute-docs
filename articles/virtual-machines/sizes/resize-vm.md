@@ -25,6 +25,10 @@ If your VM uses Premium Storage, make sure that you choose an **s** version of t
 
 ## Change the VM size
 
+> [!Note] 
+> If a resize operation fails, the VM model will still display the requested size, but the VM will continue running on its previous size until the resize is successfully allocated. This behavior applies to both the Azure portal, and all GET operations, as the displayed size always reflects the latest applied configuration, not the actual running size.
+>
+
 ### [Portal](#tab/portal)
 1. Open the [Azure portal](https://portal.azure.com). <br/><br/>
 1. Type *virtual machines* in the search. Under **Services**, select **Virtual machines**.
@@ -281,7 +285,7 @@ For more information on choosing the right SKU, you can use the following resour
 - VM (with local temp disk) -> VM (with local temp disk); and
 - VM (with no local temp disk) -> VM (with no local temp disk).
 
-   For a work-around, see [How do I migrate from a VM size with local temp disk to a VM size with no local temp disk? ](../azure-vms-no-temp-disk.yml#how-do-i-migrate-from-a-vm-size-with-local-temp-disk-to-a-vm-size-with-no-local-temp-disk---). The work-around can be used to resize a VM with no local temp disk to VM with a local temp disk. You create a snapshot of the VM with no local temp disk > create a disk from the snapshot > create VM from the disk with appropriate [VM size](../sizes.md) that supports VMs with a local temp disk.
+   For a work-around, see [How do I migrate from a VM size with local temp disk to a VM size with no local temp disk? ](../azure-vms-no-temp-disk.yml#how-do-i-migrate-my-windows-vm-from-a-size-with-local-temp-disk-to-a-vm-size-with-no-local-temp-disk---). The work-around can be used to resize a VM with no local temp disk to VM with a local temp disk. You create a snapshot of the VM with no local temp disk > create a disk from the snapshot > create VM from the disk with appropriate [VM size](../sizes.md) that supports VMs with a local temp disk.
 
 2. You can't resize a VM size that has a SCSI-based VM to a VM size that has a remote NVMe-enabled VM.
 

@@ -265,8 +265,13 @@ SLES license types:
 
 ## Check the current licensing model of a VM that has Azure Hybrid Benefit enabled
 
-With Red Hat, the Azure Hybrid Benefit extension must be installed on the VM to switch the licensing model from BYOS to PAYG or vice versa. You can view whether the agent is installed by using the Azure CLI or the Azure Instance Metadata Service.
+With Red Hat, the Azure Hybrid Benefit extension must be installed on the VM to switch the licensing model from BYOS to PAYG or vice versa. You can install the Azure Hybrid Benefit (AHB) extension for RHEL VMs by using the following CLI command.
 
+   ```azurecli
+   az vm extension set -n AHBForRHEL --publisher Microsoft.Azure.AzureHybridBenefit --vm-name myVMName --resource-group myResourceGroup
+   ```
+
+    
 For SUSE you do not need the extension, the functionality is covered by the SUSE tooling itself.
 
 ### [Azure CLI](#tab/licenseazcli)
@@ -480,6 +485,9 @@ Converting to a PAYG subscription model is supported for Azure Marketplace image
     ```
 
 ---
+
+> [!NOTE]
+> The AHBForRHEL extension currently supports RHEL 7 and RHEL 8, but doesn't support RHEL 9 or later. As a result, the extension doesn't automatically install the RHUI client on RHEL 9 or later versions. Until support for RHEL 9+ is introduced, repositories must be configured manually after installing the extension by following the procedure outlined in [Manual update procedure to use the Azure RHUI servers](/azure/virtual-machines/workloads/redhat/redhat-rhui#manual-update-procedure-to-use-the-azure-rhui-servers).
 
 ### Multiple VMs
 

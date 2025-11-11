@@ -62,17 +62,17 @@ Remote (uncached) storage info for each size
 
 | Size Name | Max Remote Storage Disks (Qty.) | Uncached Premium SSD Disk IOPS | Uncached Premium SSD Throughput (MBps) | Uncached Premium SSD Burst<sup>1</sup> IOPS | Uncached Premium SSD Burst<sup>1</sup> Throughput (MBps) | Uncached Ultra Disk and Premium SSD v2 IOPS | Uncached Ultra Disk and Premium SSD v2 Throughput (MBps) | Uncached Burst<sup>1</sup> Ultra Disk and Premium SSD v2 IOPS | Uncached Burst<sup>1</sup> Ultra Disk and Premium SSD v2 Disk Throughput (MBps) |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Standard_D2ls_v7 | 10 | 4,000 | 118 | 45,000 | 1,413 | 5,000 | 137 | 56,250 | 1,640 |
-| Standard_D4ls_v7 | 12 | 8,000 | 236 | 45,000 | 1,413 | 10,000 | 274 | 56,250 | 1,640 |
-| Standard_D8ls_v7 | 26| 16,000 | 472 | 45,000 | 1,413 | 20,000 | 548 | 56,250 | 1,640 |
-| Standard_D16ls_v7 | 48 | 32,000 | 944 | 75,000 | 1,413 | 40,000 | 1,096 | 93,750 | 1,640 |
+| Standard_D2ls_v7 | 10 | 4,000 | 118 | 45,000 | 1,413 | 5,000 | 137 | 56,000 | 1,640 |
+| Standard_D4ls_v7 | 12 | 8,000 | 236 | 45,000 | 1,413 | 10,000 | 274 | 56,000 | 1,640 |
+| Standard_D8ls_v7 | 26| 16,000 | 472 | 45,000 | 1,413 | 20,000 | 548 | 56,000 | 1,640 |
+| Standard_D16ls_v7 | 48 | 32,000 | 944 | 75,000 | 1,413 | 40,000 | 1,096 | 93,000 | 1,640 |
 | Standard_D32ls_v7 | 64 | 64,000 | 1,888 | 100,000 | 1,916 | 80,000 | 2,192 | 125,000 | 2,225 |
 | Standard_D48ls_v7 | 64 | 96,000 | 2,832 | 160,000 | 2,875 | 120,000 | 3,288 | 200,000 | 3,338 |
 | Standard_D64ls_v7 | 64 | 128,000 | 3,776 | 160,000 | 3,833 | 160,000 | 4,384 | 200,000 | 4,450 |
 | Standard_D96ls_v7 | 64 | 192,000 | 5,664 | 200,000 | 5,749 | 240,000 | 6,576 | 250,000 | 6,675 |
-| Standard_D128ls_v7 | 64 | 204,000 | 7,552 | 225,380 | 7,664 | 320,000 | 8,768 | 352,000 | 8,898 |
-| Standard_D192ls_v7 | 64 | 307,200 | 11,328 | 350,000 | 12,000 | 480,000 | 13,152 | 546,875 | 13,932 |
-| Standard_D248ls_v7 | 64 | 396,800 | 13,144 | 500,000 | 15,000 | 620,000 | 16,988 | 781,250 | 19,387 |
+| Standard_D128ls_v7 | 64 | 204,000 | 7,552 | 225,000 | 7,664 | 320,000 | 8,768 | 352,000 | 8,898 |
+| Standard_D192ls_v7 | 64 | 307,000 | 11,328 | 350,000 | 12,000 | 480,000 | 13,152 | 546,000 | 13,932 |
+| Standard_D248ls_v7 | 64 | 396,000 | 13,144 | 500,000 | 15,000 | 620,000 | 16,988 | 781,000 | 19,387 |
 
 #### Storage resources
 - [Introduction to Azure managed disks](../../../virtual-machines/managed-disks-overview.md)
